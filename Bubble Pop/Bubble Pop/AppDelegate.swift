@@ -45,7 +45,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
+    
+    // Getter
+    func getPlayers() -> [PlayerEntity] {
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PlayerEntity")
+        do {
+            return try persistentContainer.viewContext.fetch(fetch) as! [PlayerEntity]
+        } catch {
+            fatalError("Can't fetch entity")
+        }
+        
+    }
 
+    // Setter
+    func savePlayer(name : String, score : Int16){
+        let playerEntity = PlayerEntity(context: persistentContainer.viewContext)
+        playerEntity.name = name
+        playerEntity.score = score
+        self.saveContext()
+    }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

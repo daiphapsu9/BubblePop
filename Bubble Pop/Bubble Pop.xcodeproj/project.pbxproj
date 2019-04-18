@@ -14,6 +14,8 @@
 		E042C10F225F1581009ED61D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E042C10E225F1581009ED61D /* Assets.xcassets */; };
 		E042C112225F1581009ED61D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C110225F1581009ED61D /* LaunchScreen.storyboard */; };
 		E042C11A225F1974009ED61D /* ScreenTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C119225F1974009ED61D /* ScreenTwoViewController.swift */; };
+		E0A734CD22684C47008405D2 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A734CC22684C47008405D2 /* RankingTableViewController.swift */; };
+		E0A734D02268574E008405D2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A734CF2268574E008405D2 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		E042C111225F1581009ED61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E042C113225F1581009ED61D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E042C119225F1974009ED61D /* ScreenTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTwoViewController.swift; sourceTree = "<group>"; };
+		E0A734CC22684C47008405D2 /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		E0A734CF2268574E008405D2 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,11 @@
 		E042C103225F1580009ED61D /* Bubble Pop */ = {
 			isa = PBXGroup;
 			children = (
+				E0A734CE2268573F008405D2 /* Model */,
 				E042C104225F1580009ED61D /* AppDelegate.swift */,
 				E042C106225F1580009ED61D /* ViewController.swift */,
 				E042C119225F1974009ED61D /* ScreenTwoViewController.swift */,
+				E0A734CC22684C47008405D2 /* RankingTableViewController.swift */,
 				E042C108225F1580009ED61D /* Main.storyboard */,
 				E042C10E225F1581009ED61D /* Assets.xcassets */,
 				E042C110225F1581009ED61D /* LaunchScreen.storyboard */,
@@ -68,6 +74,14 @@
 				E042C10B225F1580009ED61D /* Bubble_Pop.xcdatamodeld */,
 			);
 			path = "Bubble Pop";
+			sourceTree = "<group>";
+		};
+		E0A734CE2268573F008405D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0A734CF2268574E008405D2 /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +157,9 @@
 			files = (
 				E042C107225F1580009ED61D /* ViewController.swift in Sources */,
 				E042C11A225F1974009ED61D /* ScreenTwoViewController.swift in Sources */,
+				E0A734D02268574E008405D2 /* Player.swift in Sources */,
 				E042C105225F1580009ED61D /* AppDelegate.swift in Sources */,
+				E0A734CD22684C47008405D2 /* RankingTableViewController.swift in Sources */,
 				E042C10D225F1580009ED61D /* Bubble_Pop.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
