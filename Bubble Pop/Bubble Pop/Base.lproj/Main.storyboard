@@ -42,11 +42,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0a-qt-h8q">
-                                <rect key="frame" x="121" y="464" width="133" height="62"/>
+                                <rect key="frame" x="121" y="513" width="133" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Ranks"/>
                                 <connections>
                                     <segue destination="3xc-e9-lJh" kind="show" id="MaH-QR-d8p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF6-Cl-v5X">
+                                <rect key="frame" x="172" y="475" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="WrR-1Q-vM7" kind="show" id="DTN-9f-wd7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,36 +109,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgr-hV-psc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="-225"/>
+            <point key="canvasLocation" x="703" y="545"/>
         </scene>
-        <!--Screen Two View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tfe-zQ-gah">
             <objects>
-                <viewController id="WrR-1Q-vM7" customClass="ScreenTwoViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S49-Xq-eIb">
+                <viewController id="WrR-1Q-vM7" customClass="GameViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S49-Xq-eIb" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Screen Two" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCz-Pd-wmj">
-                                <rect key="frame" x="142" y="158" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIW-aE-o9U">
-                                <rect key="frame" x="122" y="345" width="130" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dismiss"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2VD-Fi-Gsk"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-2x-j38" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="616"/>
+            <point key="canvasLocation" x="-409" y="545"/>
         </scene>
     </scenes>
 </document>
