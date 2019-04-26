@@ -19,6 +19,10 @@ class RankingTableViewController: UITableViewController {
 
     var players : [Player] = []
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +31,8 @@ class RankingTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
     }
     
     
@@ -34,6 +40,7 @@ class RankingTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let result : [PlayerEntity] = appDelegate.getPlayers()
         players = result.map({$0.toPlayer()})
+        sort()
     }
 
     // MARK: - Table view data source
@@ -65,5 +72,11 @@ class RankingTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     
+    // MARK: HELPERS
+    
+    func sort() { // should probably be called sort and not filter
+        players.sort() { $0.score > $1.score } // sort the fruit by name
+        self.tableView.reloadData(); // notify the table view the data has changed
+    }
 
 }
