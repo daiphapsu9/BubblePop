@@ -65,9 +65,7 @@ class GameScene: SKScene {
     func updateTime() {
         GameEngine.shared.duration -= 1
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: TIME_UPDATE_NOTIF), object: nil)
-        if(GameEngine.shared.duration == 0) {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: GAME_OVER_NOTIF), object: nil)
-        }
+        
     }
     
 }

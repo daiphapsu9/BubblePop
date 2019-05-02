@@ -36,17 +36,17 @@ enum BubbleType {
         case .Red:
             return 100
         case .Pink:
-            return 200
+            return 150
         case .Green:
-            return 300
+            return 200
         case .Blue:
-            return 400
+            return 250
         case .Black:
-            return 500
+            return 350
         }
     }
     
-    var score : Int {
+    var score : Double {
         switch self {
         case .Red:
             return 1
@@ -74,7 +74,7 @@ class BubbleNode : SKSpriteNode {
     init(type : BubbleType) {
         let texture = SKTexture(imageNamed: type.imageName)
         self.type = type
-        super.init(texture: texture, color: UIColor.clear, size: texture.size())
+        super.init(texture: texture, color: UIColor.clear, size: CGSize(width: 50, height: 50))
         isUserInteractionEnabled = true
     }
     
@@ -83,7 +83,7 @@ class BubbleNode : SKSpriteNode {
     }
     
     func float(toY y: CGFloat) {
-        let duration = Double(Float(y)/Float(type.speed))
+        let duration = Double(Float(y)/Float(50))
         let moveAction = (SKAction.move(to: CGPoint(x: self.position.x, y: y), duration: duration))
         let doneAction = SKAction.run({ [weak self] in
             self!.removeFromParent()
@@ -96,7 +96,14 @@ class BubbleNode : SKSpriteNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(SKAction.fadeOut(withDuration: 0.1))
-        GameEngine.shared.score += type.score
+        
+//        if let lastBubble = GameEngine.sharedz
+//            GameEngine.shared.score += type.score
+//        } else {
+            GameEngine.shared.score += type.score + type.score * 1.5
+//        }
+        
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SCORE_UPDATE_NOTIF), object: nil)
     }
     

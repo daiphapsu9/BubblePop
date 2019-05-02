@@ -13,11 +13,21 @@ class GameOverViewController: UIViewController {
     @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var playerNameTextField: UITextField!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         labelScore.text = "\(GameEngine.shared.score)"
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
 
@@ -41,6 +51,11 @@ class GameOverViewController: UIViewController {
             navigationController.popToRootViewController(animated: true)
             self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         }
+    }
+    
+    // MARK:
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
 }

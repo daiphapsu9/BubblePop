@@ -8,21 +8,31 @@
 
 import Foundation
 
-let DEFAULT_DURATION = 5
+let DEFAULT_DURATION = 60
 
 class GameEngine {
     
-    var score : Int = 0
-    var duration : Int
+    var score : Double = 0.0
+    var duration : Int {
+        didSet {
+            if duration == 0 {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: GAME_OVER_NOTIF), object: nil)
+            }
+        }
+    }
+    var lastPoppedBubble : BubbleNode?
+    
     static let shared = GameEngine()
     
     private init() {
         score = 0
         duration = DEFAULT_DURATION
+        lastPoppedBubble = nil
     }
     
     func reset() {
         score = 0
         duration = DEFAULT_DURATION
+        lastPoppedBubble = nil
     }
 }

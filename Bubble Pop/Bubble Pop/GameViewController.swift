@@ -28,7 +28,7 @@ class GameViewController: UIViewController {
             let sceneSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height - 50)
             let scene = GameScene(size: sceneSize)
             // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFill
+            scene.scaleMode = .aspectFit
             
             // Present the scene
             view.presentScene(scene)
@@ -41,9 +41,13 @@ class GameViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     // Setup view
     func setupView() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
         labelScore.text = "Score: \(GameEngine.shared.score)"
         labelTimeLeft.text = "Time left: \(GameEngine.shared.duration)"
     }
