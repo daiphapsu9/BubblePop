@@ -75,8 +75,8 @@ class RankingTableViewController: UITableViewController {
     // MARK: HELPERS
     
     func sort() { // should probably be called sort and not filter
-        players.sort() { $0.score > $1.score } // sort the fruit by name
-        self.tableView.reloadData(); // notify the table view the data has changed
+        players.sort() { $0.score > $1.score }
+        self.tableView.reloadData(); 
     }
 
 }

@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-let DEFAULT_DURATION = 60
+let DEFAULT_DURATION = 5
 
 class GameEngine {
     
@@ -35,4 +36,18 @@ class GameEngine {
         duration = DEFAULT_DURATION
         lastPoppedBubble = nil
     }
+    
+    func getFont(withSize size: Float) -> UIFont {
+        let myFontSize = CGFloat(size)
+        let myFont = UIFont(name: "Double•Bubble Shadow", size: myFontSize)
+        
+        return myFont!
+    }
+    
+    func getAllFonts(){
+        for font in UIFont.familyNames {
+            print("font === \(font)")
+        }
+    }
+    
 }
