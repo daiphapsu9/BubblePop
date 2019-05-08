@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E00A87222282FA89004B9290 /* 17807572.png in Resources */ = {isa = PBXBuildFile; fileRef = E00A87212282FA89004B9290 /* 17807572.png */; };
+		E00A87252283029B004B9290 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A87242283029B004B9290 /* ScoreView.swift */; };
+		E00A87272283073F004B9290 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E00A87262283073F004B9290 /* sprite.atlas */; };
 		E042C105225F1580009ED61D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C104225F1580009ED61D /* AppDelegate.swift */; };
 		E042C107225F1580009ED61D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C106225F1580009ED61D /* HomeViewController.swift */; };
 		E042C10A225F1580009ED61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C108225F1580009ED61D /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		E00A87212282FA89004B9290 /* 17807572.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17807572.png; sourceTree = "<group>"; };
+		E00A87242283029B004B9290 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		E00A87262283073F004B9290 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		E042C101225F1580009ED61D /* Bubble Pop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Pop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E042C104225F1580009ED61D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E042C106225F1580009ED61D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E00A87232283027C004B9290 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				E00A87242283029B004B9290 /* ScoreView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		E042C0F8225F1580009ED61D = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E06572032281728000651E15 /* Resources */,
+				E00A87232283027C004B9290 /* CustomViews */,
 				E06572182281987800651E15 /* ViewControllers */,
 				E0EC07CC227ABEBF001F63A4 /* Helper */,
 				E0A734CE2268573F008405D2 /* Model */,
@@ -114,6 +127,7 @@
 		E06572032281728000651E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E00A87262283073F004B9290 /* sprite.atlas */,
 				E00A87212282FA89004B9290 /* 17807572.png */,
 				E06572142281932100651E15 /* settings.png */,
 				E065721222818C1700651E15 /* cup_icon.png */,
@@ -223,6 +237,7 @@
 				E042C112225F1581009ED61D /* LaunchScreen.storyboard in Resources */,
 				E0657205228172CE00651E15 /* Balonku-Regular.otf in Resources */,
 				E065721322818C1800651E15 /* cup_icon.png in Resources */,
+				E00A87272283073F004B9290 /* sprite.atlas in Resources */,
 				E0657211228189D300651E15 /* cup.png in Resources */,
 				E042C10F225F1581009ED61D /* Assets.xcassets in Resources */,
 				E065720D22817DCF00651E15 /* background2.png in Resources */,
@@ -251,6 +266,7 @@
 				E0A81D172272FA0D00FD59A0 /* GameOverViewController.swift in Sources */,
 				E042C10D225F1580009ED61D /* Bubble_Pop.xcdatamodeld in Sources */,
 				E06572172281986A00651E15 /* SettingsViewController.swift in Sources */,
+				E00A87252283029B004B9290 /* ScoreView.swift in Sources */,
 				E0A81D132272E6D000FD59A0 /* Utilities.swift in Sources */,
 				E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */,
 			);

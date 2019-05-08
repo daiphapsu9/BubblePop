@@ -83,7 +83,8 @@ class BubbleNode : SKSpriteNode {
     }
     
     func float(toY y: CGFloat) {
-        let duration = Double(Float(y)/Float(type.speed))
+//        let duration = Double(Float(y)/Float(type.speed))
+        let duration = Double(Float(y)/Float(50))
         let moveAction = (SKAction.move(to: CGPoint(x: self.position.x, y: y), duration: duration))
         let doneAction = SKAction.run({ [weak self] in
             self!.removeFromParent()
@@ -95,18 +96,51 @@ class BubbleNode : SKSpriteNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.run(SKAction.fadeOut(withDuration: 0.1))
+        self.run(SKAction.fadeOut(withDuration: 0.01))
         
         if let lastType = Utilities.shared.lastPoppedBubbleType {
-            if (lastType == Utilities.shared.lastPoppedBubbleType) {
-                    Utilities.shared.score += type.score + type.score * 1.5
+            if (lastType == self.type) {
+                    Utilities.shared.score += type.score * 1.5
             } else {
                 Utilities.shared.score += type.score
             }
+        } else {
+            Utilities.shared.score += type.score
         }
-    
-        
+        Utilities.shared.lastPoppedBubbleType = type
+        busting()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SCORE_UPDATE_NOTIF), object: nil)
     }
     
+    var bubbleBurstFrames: [SKTexture] = []
+    
+    func busting() {
+        let atlas = SKTextureAtlas(named: "sprite")
+        var burstFrame: [SKTexture] = []
+        
+        let numImages = atlas.textureNames.count
+        for i in 1...numImages {
+            let textureName = "\(i)"
+            burstFrame.append(atlas.textureNamed(textureName))
+        }
+        bubbleBurstFrames = burstFrame
+        
+        let firstFrameTexture = bubbleBurstFrames[0]
+        var burstingNode : SKSpriteNode
+        burstingNode = SKSpriteNode(texture: firstFrameTexture)
+        burstingNode.size = CGSize(width: 75, height: 75)
+        burstingNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        parent!.addChild(burstingNode)
+        let animateAction = SKAction.animate(with: bubbleBurstFrames,
+                                             timePerFrame: 0.1,
+                                             resize: false,
+                                             restore: false)
+        let doneAction = SKAction.run({ [weak self] in
+            burstingNode.removeFromParent()
+            self!.removeFromParent()
+        })
+        
+        burstingNode.run(SKAction.sequence([animateAction,SKAction.fadeOut(withDuration: 0.1), doneAction]))
+        Utilities.shared.currentBubbleNumber -= 1
+    }
 }

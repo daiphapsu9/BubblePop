@@ -51,9 +51,11 @@ class GameScene: SKScene {
                     }
                 }
             }
-            if (shouldAdd == true) {
+            
+            if (shouldAdd == true && Utilities.shared.currentBubbleNumber < Utilities.shared.maxNumberOfBubble) {
                 addChild(bubble)
                 bubble.float(toY: (self.view?.bounds.height)!)
+                Utilities.shared.currentBubbleNumber += 1
             }
         }
     }

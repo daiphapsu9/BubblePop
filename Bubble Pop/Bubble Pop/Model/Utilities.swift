@@ -17,6 +17,7 @@ let DEFAULT_MAX_BUBBLE = 15
 class Utilities {
     
     var score : Double = 0.0
+    var currentBubbleNumber : Int = 0
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
             UserDefaults.standard.set(maxNumberOfBubble, forKey: MAX_BUBBLE_KEY)
@@ -41,7 +42,6 @@ class Utilities {
     static let shared = Utilities()
     
     private init() {
-        score = 0
         duration = UserDefaults.standard.integer(forKey: MAX_DURATION_KEY)
         maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
         lastPoppedBubbleType = nil
@@ -51,6 +51,7 @@ class Utilities {
         score = 0
         setDefaultValue()
         lastPoppedBubbleType = nil
+        currentBubbleNumber = 0
     }
     
     func getFont(withSize size: Float) -> UIFont {
