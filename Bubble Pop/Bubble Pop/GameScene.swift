@@ -26,7 +26,6 @@ class GameScene: SKScene {
     func setupAction() {
         let generateAction = SKAction.run({ [weak self] in
             self!.generateBubble()
-            self!.generateBubble()
         })
         self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1)])))
         
@@ -38,24 +37,25 @@ class GameScene: SKScene {
     
     // helper
     func generateBubble() {
-        
-        let type = randomType()
-        let bubble = BubbleNode(type : type)
-        let position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: 0)
-        bubble.position = position
-        var shouldAdd = true
-        for child in children {
-            if child is BubbleNode {
-                if (child.intersects(bubble) == true) {
-                    shouldAdd = false
+        let numberOfBubble = Int.random(in: 1...5)
+        for _ in 0...numberOfBubble {
+            let type = randomType()
+            let bubble = BubbleNode(type : type)
+            let position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: 0)
+            bubble.position = position
+            var shouldAdd = true
+            for child in children {
+                if child is BubbleNode {
+                    if (child.intersects(bubble) == true) {
+                        shouldAdd = false
+                    }
                 }
             }
+            if (shouldAdd == true) {
+                addChild(bubble)
+                bubble.float(toY: (self.view?.bounds.height)!)
+            }
         }
-        if (shouldAdd == true) {
-            addChild(bubble)
-            bubble.float(toY: (self.view?.bounds.height)!)
-        }
-        
     }
     
     

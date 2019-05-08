@@ -36,7 +36,7 @@ enum BubbleType {
         case .Red:
             return 150
         case .Pink:
-            return 100
+            return 200
         case .Green:
             return 250
         case .Blue:

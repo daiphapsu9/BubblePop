@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00A87222282FA89004B9290 /* 17807572.png in Resources */ = {isa = PBXBuildFile; fileRef = E00A87212282FA89004B9290 /* 17807572.png */; };
 		E042C105225F1580009ED61D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C104225F1580009ED61D /* AppDelegate.swift */; };
 		E042C107225F1580009ED61D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C106225F1580009ED61D /* HomeViewController.swift */; };
 		E042C10A225F1580009ED61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C108225F1580009ED61D /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00A87212282FA89004B9290 /* 17807572.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17807572.png; sourceTree = "<group>"; };
 		E042C101225F1580009ED61D /* Bubble Pop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Pop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E042C104225F1580009ED61D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E042C106225F1580009ED61D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -94,8 +96,8 @@
 		E042C103225F1580009ED61D /* Bubble Pop */ = {
 			isa = PBXGroup;
 			children = (
-				E06572182281987800651E15 /* ViewControllers */,
 				E06572032281728000651E15 /* Resources */,
+				E06572182281987800651E15 /* ViewControllers */,
 				E0EC07CC227ABEBF001F63A4 /* Helper */,
 				E0A734CE2268573F008405D2 /* Model */,
 				E042C104225F1580009ED61D /* AppDelegate.swift */,
@@ -112,6 +114,7 @@
 		E06572032281728000651E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E00A87212282FA89004B9290 /* 17807572.png */,
 				E06572142281932100651E15 /* settings.png */,
 				E065721222818C1700651E15 /* cup_icon.png */,
 				E0657210228189D300651E15 /* cup.png */,
@@ -225,6 +228,7 @@
 				E065720D22817DCF00651E15 /* background2.png in Resources */,
 				E042C10A225F1580009ED61D /* Main.storyboard in Resources */,
 				E065720B22817B9C00651E15 /* background1.png in Resources */,
+				E00A87222282FA89004B9290 /* 17807572.png in Resources */,
 				E06572072281774300651E15 /* Double_Bubble_shadow.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

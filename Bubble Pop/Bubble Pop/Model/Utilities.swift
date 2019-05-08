@@ -49,8 +49,7 @@ class Utilities {
     
     func reset() {
         score = 0
-        duration = UserDefaults.standard.integer(forKey: MAX_DURATION_KEY)
-        maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
+        setDefaultValue()
         lastPoppedBubbleType = nil
     }
     
@@ -60,7 +59,19 @@ class Utilities {
         return myFont!
     }
     
-    
+    func setDefaultValue(){
+        if (UserDefaults.standard.integer(forKey: MAX_DURATION_KEY) <= 0) {
+            duration = DEFAULT_DURATION
+        } else {
+            duration = UserDefaults.standard.integer(forKey: MAX_DURATION_KEY)
+        }
+        
+        if (UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY) <= 0) {
+            maxNumberOfBubble = DEFAULT_MAX_BUBBLE
+        } else {
+            maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
+        }
+    }
     
 //    func getAllFonts(){
 //        for font in UIFont.familyNames {
