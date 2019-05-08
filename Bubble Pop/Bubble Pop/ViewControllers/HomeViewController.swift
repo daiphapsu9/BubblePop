@@ -11,7 +11,6 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleSecondLabel: UILabel!
     
     
     override var prefersStatusBarHidden: Bool {
@@ -26,11 +25,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "Bubble POP"
-        titleLabel.font = GameEngine.shared.getFont(withSize: 70)
+        titleLabel.font = Utilities.shared.getFont(withSize: 70)
 //        titleSecondLabel.font = GameEngine.shared.getFont(withSize: 70)
         
         // Do any additional setup after loading the view, typically from a nib.
-        GameEngine.shared.getAllFonts()
+//        GameEngine.shared.getAllFonts()
         
         let image = UIImage(named: "background1")
         let imageView = UIImageView(image: image!)
@@ -42,7 +41,6 @@ class HomeViewController: UIViewController {
     
     // MARK:
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
 

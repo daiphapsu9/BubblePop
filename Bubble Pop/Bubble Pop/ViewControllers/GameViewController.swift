@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var labelTimeLeft: UILabel!
     @IBOutlet weak var labelHiScore: UILabel!
     @IBOutlet weak var labelScore: UILabel!
+    @IBOutlet weak var gameView: SKView!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -24,11 +25,11 @@ class GameViewController: UIViewController {
         setupNotification()
         setupView()
         // Do any additional setup after loading the view.
-        if let view = self.view as! SKView? {
-            let sceneSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height - 50)
+        if let view = self.gameView {
+            let sceneSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
             let scene = GameScene(size: sceneSize)
             // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFit
+            scene.scaleMode = .resizeFill
             
             // Present the scene
             view.presentScene(scene)
@@ -48,8 +49,8 @@ class GameViewController: UIViewController {
     
     // Setup view
     func setupView() {
-        labelScore.text = "Score: \(GameEngine.shared.score)"
-        labelTimeLeft.text = "Time left: \(GameEngine.shared.duration)"
+        labelScore.text = "Score: \(Utilities.shared.score)"
+        labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
     }
     
     // MARK: Notification handler
@@ -78,11 +79,11 @@ class GameViewController: UIViewController {
 
     // MARK: Game update
     @objc func updateScore() {
-        labelScore.text = "Score: \(GameEngine.shared.score)"
+        labelScore.text = "Score: \(Utilities.shared.score)"
     }
     
     @objc func updateTime() {
-        labelTimeLeft.text = "Time left: \(GameEngine.shared.duration)"
+        labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
     }
     
     @objc func handleGameOver() {

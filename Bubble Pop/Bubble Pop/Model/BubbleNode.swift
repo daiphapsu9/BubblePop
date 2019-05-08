@@ -34,15 +34,15 @@ enum BubbleType {
     var speed : Int {
         switch self {
         case .Red:
-            return 100
-        case .Pink:
             return 150
+        case .Pink:
+            return 100
         case .Green:
-            return 200
-        case .Blue:
             return 250
+        case .Blue:
+            return 300
         case .Black:
-            return 350
+            return 400
         }
     }
     
@@ -74,7 +74,7 @@ class BubbleNode : SKSpriteNode {
     init(type : BubbleType) {
         let texture = SKTexture(imageNamed: type.imageName)
         self.type = type
-        super.init(texture: texture, color: UIColor.clear, size: CGSize(width: 50, height: 50))
+        super.init(texture: texture, color: UIColor.clear, size: CGSize(width: 75, height: 75))
         isUserInteractionEnabled = true
     }
     
@@ -83,7 +83,7 @@ class BubbleNode : SKSpriteNode {
     }
     
     func float(toY y: CGFloat) {
-        let duration = Double(Float(y)/Float(50))
+        let duration = Double(Float(y)/Float(type.speed))
         let moveAction = (SKAction.move(to: CGPoint(x: self.position.x, y: y), duration: duration))
         let doneAction = SKAction.run({ [weak self] in
             self!.removeFromParent()
@@ -97,12 +97,14 @@ class BubbleNode : SKSpriteNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(SKAction.fadeOut(withDuration: 0.1))
         
-//        if let lastBubble = GameEngine.sharedz
-//            GameEngine.shared.score += type.score
-//        } else {
-            GameEngine.shared.score += type.score + type.score * 1.5
-//        }
-        
+        if let lastType = Utilities.shared.lastPoppedBubbleType {
+            if (lastType == Utilities.shared.lastPoppedBubbleType) {
+                    Utilities.shared.score += type.score + type.score * 1.5
+            } else {
+                Utilities.shared.score += type.score
+            }
+        }
+    
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SCORE_UPDATE_NOTIF), object: nil)
     }

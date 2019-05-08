@@ -20,14 +20,15 @@ class GameScene: SKScene {
     func setupView() {
         self.backgroundColor = UIColor.white
         removeAllChildren()
-        GameEngine.shared.reset()
+        Utilities.shared.reset()
     }
     
     func setupAction() {
         let generateAction = SKAction.run({ [weak self] in
             self!.generateBubble()
+            self!.generateBubble()
         })
-        self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 0.5)])))
+        self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1)])))
         
         let updateTimeAction = SKAction.run({ [weak self] in
             self!.updateTime()
@@ -37,13 +38,24 @@ class GameScene: SKScene {
     
     // helper
     func generateBubble() {
+        
         let type = randomType()
         let bubble = BubbleNode(type : type)
-        bubble.size = CGSize(width: 50.0, height: 50.0)
-        bubble.position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: 0)
+        let position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: 0)
+        bubble.position = position
+        var shouldAdd = true
+        for child in children {
+            if child is BubbleNode {
+                if (child.intersects(bubble) == true) {
+                    shouldAdd = false
+                }
+            }
+        }
+        if (shouldAdd == true) {
+            addChild(bubble)
+            bubble.float(toY: (self.view?.bounds.height)!)
+        }
         
-        addChild(bubble)
-        bubble.float(toY: (self.view?.bounds.height)!)
     }
     
     
@@ -63,7 +75,7 @@ class GameScene: SKScene {
     }
     
     func updateTime() {
-        GameEngine.shared.duration -= 1
+        Utilities.shared.duration -= 1
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: TIME_UPDATE_NOTIF), object: nil)
         
     }
