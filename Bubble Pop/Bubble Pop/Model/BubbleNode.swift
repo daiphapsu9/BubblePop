@@ -99,6 +99,7 @@ class BubbleNode : SKSpriteNode {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.run(SKAction.fadeOut(withDuration: 0.01))
         isBurstingAnimating = true
         if let lastType = Utilities.shared.lastPoppedBubbleType {
             if (lastType == self.type) {

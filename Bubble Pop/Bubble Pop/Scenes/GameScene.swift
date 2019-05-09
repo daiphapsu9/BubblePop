@@ -34,11 +34,17 @@ class GameScene: SKScene {
             self!.generateBubble()
         })
         
-        let clearAction = SKAction.run({ [weak self] in
-            self!.clearCurrentScreen()
-        })
+        switch Utilities.shared.gameMode {
+        case .classic?:
+            let clearAction = SKAction.run({ [weak self] in
+                self!.clearCurrentScreen()
+            })
+            self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1), clearAction])))
+        default:
+            self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1)])))
+        }
         
-        self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1), clearAction])))
+        
         
         let updateTimeAction = SKAction.run({ [weak self] in
             self!.updateTime()

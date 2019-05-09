@@ -15,16 +15,75 @@ class GameViewController: UIViewController {
     @IBOutlet weak var labelHiScore: UILabel!
     @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var gameView: SKView!
-    
+    @IBOutlet weak var countDownLabel: UILabel!
+    @IBOutlet weak var countDownBackground: UIView!
+    var timer : Timer?
+    var countDown = 3
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
         setupNotification()
         setupView()
-        // Do any additional setup after loading the view.
+        animatingCountDown()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    // Setup view
+    func setupView() {
+        labelScore.text = "Score: \(Utilities.shared.score)"
+        labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
+    }
+    
+    func animatingCountDown() {
+        timer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(updateCountdown), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCountdown() {
+        doFadeOut()
+        if(countDown == 0) {
+            countDownLabel.text = "GO"
+        } else {
+            countDownLabel.text = "\(countDown)"
+        }
+        doFadeIn()
+        if(countDown <= 0){
+            processToPlay()
+        }
+    }
+    
+    func processToPlay() {
+        timer?.invalidate()
+        timer = nil
+        
+        countDownBackground.fadeOut(duration: 0.4, delay: 1.0)
+        timer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(showGameScene), userInfo: nil, repeats: false)
+    }
+    
+    @objc func doFadeIn() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseIn], animations: {
+            self.countDownLabel.alpha = 1.0
+        }, completion:{ _ in
+            self.countDown -= 1
+        })
+    }
+    
+    @objc func doFadeOut() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseOut], animations: {
+            self.countDownLabel.alpha = 0
+        }, completion: nil)
+    }
+    
+    @objc func showGameScene() {
+        
         if let view = self.gameView {
             let sceneSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
             let scene = GameScene(size: sceneSize)
@@ -40,17 +99,6 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
             view.showsPhysics = true
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    // Setup view
-    func setupView() {
-        labelScore.text = "Score: \(Utilities.shared.score)"
-        labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
     }
     
     // MARK: Notification handler
