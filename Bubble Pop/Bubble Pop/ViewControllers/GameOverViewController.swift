@@ -21,7 +21,7 @@ class GameOverViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
-        labelScore.text = "\(Utilities.shared.score)"
+        labelScore.text = "\(Int(Utilities.shared.score))"
         
     }
     
@@ -41,9 +41,9 @@ class GameOverViewController: UIViewController {
     }
     */
     @IBAction func submitButtonTapped(_ sender: Any) {
-        let playerName = (playerNameTextField.text == nil || (playerNameTextField.text?.isEmpty)!) ? "Anonymous" : playerNameTextField.text
+        let playerName = Utilities.shared.currentPlayerName
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.savePlayer(name: playerName!, score: Int16(Utilities.shared.score))
+        appDelegate.savePlayer(name: playerName, score: Int16(Utilities.shared.score))
         // create player to save
         
         

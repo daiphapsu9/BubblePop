@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var playerNameTextField: UITextField!
     
     
     override var prefersStatusBarHidden: Bool {
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController {
     // MARK:
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewDidLoad() {
@@ -43,6 +45,16 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToGameVC") {
+            // pass data to next view
+            if let name = playerNameTextField.text {
+                Utilities.shared.currentPlayerName = (!name.isEmpty) ? name : DEFAULT_PLAYER_NAME
+            } else {
+                Utilities.shared.currentPlayerName = DEFAULT_PLAYER_NAME
+            }
+            
+        }
+    }
 }
 

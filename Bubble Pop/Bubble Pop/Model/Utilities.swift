@@ -11,6 +11,7 @@ import UIKit
 
 let MAX_DURATION_KEY = "DURATION_KEY"
 let MAX_BUBBLE_KEY = "MAX_BUBBLE_KEY"
+let DEFAULT_PLAYER_NAME = "Anonymous"
 let DEFAULT_DURATION = 30
 let DEFAULT_MAX_BUBBLE = 15
 
@@ -18,6 +19,7 @@ class Utilities {
     
     var score : Double = 0.0
     var currentBubbleNumber : Int = 0
+    var currentPlayerName : String = DEFAULT_PLAYER_NAME
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
             UserDefaults.standard.set(maxNumberOfBubble, forKey: MAX_BUBBLE_KEY)
