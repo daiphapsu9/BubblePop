@@ -30,6 +30,7 @@ class Utilities {
     var gameMode : GameMode? = .classic
     var comboLength : Int = 1
     
+    
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
             UserDefaults.standard.set(maxNumberOfBubble, forKey: MAX_BUBBLE_KEY)
@@ -58,6 +59,7 @@ class Utilities {
         maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
         lastPoppedBubbleType = nil
         setDefaultValue()
+        
     }
     
     func reset() {
@@ -88,4 +90,20 @@ class Utilities {
         }
     }
     
+    func retrievePlayers() -> [Player]{
+        // load all player
+        var players : [Player] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let result : [PlayerEntity] = appDelegate.getPlayers()
+        players = result.map({$0.toPlayer()})
+        players.sort() { $0.score > $1.score }
+        return players
+    }
+    
+    func getHighestScore() -> Int{
+        // load all player
+        let players = retrievePlayers()
+        if(players.count >= 1) { return players[0].score }
+        else { return 0 }
+    }
 }

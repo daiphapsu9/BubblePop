@@ -9,10 +9,12 @@
 import UIKit
 
 class GameOverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    // CONSTANT
+    let DEFAULT_RANKING_NUMBER = 5
 
     @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
     var players : [Player] = []
     
     override var prefersStatusBarHidden: Bool {
@@ -24,13 +26,7 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
         hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
         labelScore.text = "\(Int(Utilities.shared.score))"
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let result : [PlayerEntity] = appDelegate.getPlayers()
-        players = result.map({$0.toPlayer()})
-        
-        players.sort() { $0.score > $1.score }
-        tableView.reloadData();
+        players = Utilities.shared.retrievePlayers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,7 +59,7 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (players.count < 3) ? players.count : 3
+        return (players.count < DEFAULT_RANKING_NUMBER) ? players.count : DEFAULT_RANKING_NUMBER
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

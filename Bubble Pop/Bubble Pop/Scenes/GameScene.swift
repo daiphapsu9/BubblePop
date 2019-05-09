@@ -59,6 +59,7 @@ class GameScene: SKScene {
     
     func clearCurrentScreen() {
         var count = 0;
+        if(self.children.count == 0) { return }
         let numberOfBubbleClear = Int.random(in: 0..<self.children.count)
         for child in children {
             if(count >= numberOfBubbleClear) { return }
@@ -133,7 +134,8 @@ class GameScene: SKScene {
     }
     
     func getBubbleSize() -> CGSize {
-        return CGSize(width: Int((self.view?.bounds.width)!/6), height: Int((self.view?.bounds.width)!/6))
+        let preferSize = min(Float((self.view?.bounds.width)!), Float((self.view?.bounds.height)!))
+        return CGSize(width: Int(preferSize/6), height: Int(preferSize/6))
     }
     
     func updateTime() {
@@ -171,7 +173,7 @@ class GameScene: SKScene {
                 }
             }
         }
-        let doneAction = SKAction.run({ [weak self] in
+        let doneAction = SKAction.run({
             scoreSprite.removeFromParent()
         })
         

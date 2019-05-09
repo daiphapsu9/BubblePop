@@ -39,10 +39,7 @@ class RankingTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let result : [PlayerEntity] = appDelegate.getPlayers()
-        players = result.map({$0.toPlayer()})
-        sort()
+        players = Utilities.shared.retrievePlayers()
     }
 
     // MARK: - Table view data source

@@ -43,6 +43,8 @@ class GameViewController: UIViewController {
         Utilities.shared.reset()
         labelScore.text = "Score: \(Utilities.shared.score)"
         labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
+        let hiScore = Utilities.shared.getHighestScore()
+        labelHiScore.text = "Hi-Score: \(hiScore)"
     }
     
     func animatingCountDown() {

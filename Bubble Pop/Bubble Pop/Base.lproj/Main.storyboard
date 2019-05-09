@@ -20,7 +20,7 @@
             <objects>
                 <navigationController id="xSf-Th-P2b" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXa-uA-4FG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -370,7 +370,7 @@
             <objects>
                 <tableViewController title="High Score" id="3xc-e9-lJh" customClass="RankingTableViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cUG-H8-PZd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -628,24 +628,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zx3-AG-BJ7">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-ZK-Hgq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="60"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="o3f-ZK-Hgq" firstAttribute="leading" secondItem="zx3-AG-BJ7" secondAttribute="leading" id="C0j-jj-0tj"/>
-                                    <constraint firstItem="o3f-ZK-Hgq" firstAttribute="top" secondItem="zx3-AG-BJ7" secondAttribute="top" id="E0q-iK-5ca"/>
-                                    <constraint firstAttribute="trailing" secondItem="o3f-ZK-Hgq" secondAttribute="trailing" id="Tvv-Ow-lUx"/>
-                                    <constraint firstAttribute="bottom" secondItem="o3f-ZK-Hgq" secondAttribute="bottom" id="Z1A-eX-1cP"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWT-C8-XTb" userLabel="StatusView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="48"/>
                                 <subviews>
@@ -687,6 +669,24 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkc-2K-lDn" customClass="SKView">
                                 <rect key="frame" x="0.0" y="68" width="320" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zx3-AG-BJ7">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3f-ZK-Hgq">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="o3f-ZK-Hgq" firstAttribute="leading" secondItem="zx3-AG-BJ7" secondAttribute="leading" id="C0j-jj-0tj"/>
+                                    <constraint firstItem="o3f-ZK-Hgq" firstAttribute="top" secondItem="zx3-AG-BJ7" secondAttribute="top" id="E0q-iK-5ca"/>
+                                    <constraint firstAttribute="trailing" secondItem="o3f-ZK-Hgq" secondAttribute="trailing" id="Tvv-Ow-lUx"/>
+                                    <constraint firstAttribute="bottom" secondItem="o3f-ZK-Hgq" secondAttribute="bottom" id="Z1A-eX-1cP"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
