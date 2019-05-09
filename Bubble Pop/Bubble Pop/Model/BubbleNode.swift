@@ -70,6 +70,7 @@ class BubbleNode : SKSpriteNode {
     
     var type : BubbleType = .Red
     weak var delegate: BubbleNodeDelegate!
+    var isBurstingAnimating = false
     
     init(type : BubbleType) {
         let texture = SKTexture(imageNamed: type.imageName)
@@ -99,7 +100,7 @@ class BubbleNode : SKSpriteNode {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(SKAction.fadeOut(withDuration: 0.01))
-        
+        isBurstingAnimating = true
         if let lastType = Utilities.shared.lastPoppedBubbleType {
             if (lastType == self.type) {
                     Utilities.shared.score += type.score * 1.5
@@ -110,6 +111,7 @@ class BubbleNode : SKSpriteNode {
             Utilities.shared.score += type.score
         }
         Utilities.shared.lastPoppedBubbleType = type
+        Utilities.shared.currentBubbleNumber -= 1
         busting()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SCORE_UPDATE_NOTIF), object: nil)
     }
@@ -142,7 +144,6 @@ class BubbleNode : SKSpriteNode {
         let doneAction = SKAction.run({ [weak self] in
             burstingNode.removeFromParent()
             self?.removeFromParent()
-            Utilities.shared.currentBubbleNumber -= 1
         })
         
         burstingNode.run(SKAction.sequence([animateAction,SKAction.fadeOut(withDuration: 0.1), doneAction]))
