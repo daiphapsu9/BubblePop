@@ -76,6 +76,7 @@ class BubbleNode : SKSpriteNode {
         self.type = type
         super.init(texture: texture, color: UIColor.clear, size: CGSize(width: 75, height: 75))
         isUserInteractionEnabled = true
+        createBurstingSprite()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,11 +84,12 @@ class BubbleNode : SKSpriteNode {
     }
     
     func float(toY y: CGFloat) {
-//        let duration = Double(Float(y)/Float(type.speed))
-        let duration = Double(Float(y)/Float(50))
+        let duration = Double(Float(y)/Float(type.speed))
+//        let duration = Double(Float(y)/Float(50))
         let moveAction = (SKAction.move(to: CGPoint(x: self.position.x, y: y), duration: duration))
         let doneAction = SKAction.run({ [weak self] in
             self!.removeFromParent()
+            Utilities.shared.currentBubbleNumber -= 1
         })
         self.run(SKAction.sequence([moveAction,doneAction]))
     }
@@ -114,7 +116,7 @@ class BubbleNode : SKSpriteNode {
     
     var bubbleBurstFrames: [SKTexture] = []
     
-    func busting() {
+    func createBurstingSprite() {
         let atlas = SKTextureAtlas(named: "sprite")
         var burstFrame: [SKTexture] = []
         
@@ -124,7 +126,9 @@ class BubbleNode : SKSpriteNode {
             burstFrame.append(atlas.textureNamed(textureName))
         }
         bubbleBurstFrames = burstFrame
-        
+    }
+    
+    func busting() {
         let firstFrameTexture = bubbleBurstFrames[0]
         var burstingNode : SKSpriteNode
         burstingNode = SKSpriteNode(texture: firstFrameTexture)
@@ -137,10 +141,10 @@ class BubbleNode : SKSpriteNode {
                                              restore: false)
         let doneAction = SKAction.run({ [weak self] in
             burstingNode.removeFromParent()
-            self!.removeFromParent()
+            self?.removeFromParent()
+            Utilities.shared.currentBubbleNumber -= 1
         })
         
         burstingNode.run(SKAction.sequence([animateAction,SKAction.fadeOut(withDuration: 0.1), doneAction]))
-        Utilities.shared.currentBubbleNumber -= 1
     }
 }

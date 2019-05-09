@@ -16,6 +16,7 @@
 		E042C10D225F1580009ED61D /* Bubble_Pop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E042C10B225F1580009ED61D /* Bubble_Pop.xcdatamodeld */; };
 		E042C10F225F1581009ED61D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E042C10E225F1581009ED61D /* Assets.xcassets */; };
 		E042C112225F1581009ED61D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C110225F1581009ED61D /* LaunchScreen.storyboard */; };
+		E054D22C22840E3B001FCECC /* crown.png in Resources */ = {isa = PBXBuildFile; fileRef = E054D22B22840E3B001FCECC /* crown.png */; };
 		E05CBD7B2270196C00638A98 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD7A2270196C00638A98 /* BubbleNode.swift */; };
 		E05CBD7D22701E5300638A98 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD7C22701E5300638A98 /* GameScene.swift */; };
 		E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD8022701EB000638A98 /* GameViewController.swift */; };
@@ -49,6 +50,7 @@
 		E042C10E225F1581009ED61D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E042C111225F1581009ED61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E042C113225F1581009ED61D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E054D22B22840E3B001FCECC /* crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crown.png; sourceTree = "<group>"; };
 		E05CBD7A2270196C00638A98 /* BubbleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		E05CBD7C22701E5300638A98 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E05CBD8022701EB000638A98 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		E06572032281728000651E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E054D22B22840E3B001FCECC /* crown.png */,
 				E00A87262283073F004B9290 /* sprite.atlas */,
 				E00A87212282FA89004B9290 /* 17807572.png */,
 				E06572142281932100651E15 /* settings.png */,
@@ -159,7 +162,6 @@
 			children = (
 				E0A734CF2268574E008405D2 /* Player.swift */,
 				E05CBD7A2270196C00638A98 /* BubbleNode.swift */,
-				E0A81D122272E6D000FD59A0 /* Utilities.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +169,7 @@
 		E0EC07CC227ABEBF001F63A4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E0A81D122272E6D000FD59A0 /* Utilities.swift */,
 				E0A81D142272F27700FD59A0 /* NotificatioCenter.swift */,
 				E0EC07CD227ABF00001F63A4 /* UIViewController+Extension.swift */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E054D22C22840E3B001FCECC /* crown.png in Resources */,
 				E06572152281932200651E15 /* settings.png in Resources */,
 				E065720F228185FC00651E15 /* playbutton.png in Resources */,
 				E065720922817A5600651E15 /* background.png in Resources */,

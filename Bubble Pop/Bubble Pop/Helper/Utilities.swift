@@ -47,6 +47,7 @@ class Utilities {
         duration = UserDefaults.standard.integer(forKey: MAX_DURATION_KEY)
         maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
         lastPoppedBubbleType = nil
+        setDefaultValue()
     }
     
     func reset() {

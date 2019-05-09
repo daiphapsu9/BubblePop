@@ -87,6 +87,11 @@ class GameViewController: UIViewController {
     }
     
     @objc func handleGameOver() {
+        // create player to save
+        let playerName = Utilities.shared.currentPlayerName
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.savePlayer(name: playerName, score: Int16(Utilities.shared.score))
+        
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             let gameOverVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "GameOverViewController")
             navigationController.pushViewController(gameOverVC,animated: true)

@@ -8,10 +8,12 @@
 
 import UIKit
 
-class GameOverViewController: UIViewController {
+class GameOverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var labelScore: UILabel!
-    @IBOutlet weak var playerNameTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var players : [Player] = []
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -23,6 +25,12 @@ class GameOverViewController: UIViewController {
         // Do any additional setup after loading the view.
         labelScore.text = "\(Int(Utilities.shared.score))"
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let result : [PlayerEntity] = appDelegate.getPlayers()
+        players = result.map({$0.toPlayer()})
+        
+        players.sort() { $0.score > $1.score }
+        tableView.reloadData();
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,16 +49,31 @@ class GameOverViewController: UIViewController {
     }
     */
     @IBAction func submitButtonTapped(_ sender: Any) {
-        let playerName = Utilities.shared.currentPlayerName
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.savePlayer(name: playerName, score: Int16(Utilities.shared.score))
-        // create player to save
-        
-        
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             navigationController.popToRootViewController(animated: true)
             self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         }
+    }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return (players.count < 3) ? players.count : 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCellIdentifier", for: indexPath)
+        
+        // Configure the cell...
+        cell.textLabel?.text = players[indexPath.row].name
+        cell.detailTextLabel?.text = String(players[indexPath.row].score)
+        return cell
     }
     
     // MARK:
