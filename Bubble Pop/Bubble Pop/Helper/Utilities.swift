@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: CONSTANT
+
 let MAX_DURATION_KEY = "DURATION_KEY"
 let MAX_BUBBLE_KEY = "MAX_BUBBLE_KEY"
 let DEFAULT_PLAYER_NAME = "Anonymous"
@@ -22,10 +24,11 @@ enum GameMode {
 
 class Utilities {
     
-    var score : Double = 0.0
+    var score : Int = 0
     var currentBubbleNumber : Int = 0
     var currentPlayerName : String = DEFAULT_PLAYER_NAME
     var gameMode : GameMode? = .classic
+    var comboLength : Int = 1
     
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
@@ -62,6 +65,7 @@ class Utilities {
         setDefaultValue()
         lastPoppedBubbleType = nil
         currentBubbleNumber = 0
+        comboLength = 1
     }
     
     func getFont(withSize size: Float) -> UIFont {

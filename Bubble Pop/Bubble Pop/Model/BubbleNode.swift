@@ -31,6 +31,21 @@ enum BubbleType {
         }
     }
     
+    var color : UIColor {
+        switch self {
+        case .Red:
+            return UIColor(red: 231/255.0, green: 51/255.0, blue: 35/255.0, alpha: 1)
+        case .Pink:
+            return UIColor(red: 175/255.0, green: 44/255.0, blue: 129/255.0, alpha: 1)
+        case .Green:
+            return UIColor(red: 59/255.0, green: 125/255.0, blue: 33/255.0, alpha: 1)
+        case .Blue:
+            return UIColor(red: 0/255.0, green: 29/255.0, blue: 244/255.0, alpha: 1)
+        case .Black:
+            return UIColor.black
+        }
+    }
+    
     var speed : Int {
         switch self {
         case .Red:
@@ -71,6 +86,7 @@ class BubbleNode : SKSpriteNode {
     var type : BubbleType = .Red
     weak var delegate: BubbleNodeDelegate!
     var isBurstingAnimating = false
+    var scoreGet = 0.0
     
     init(type : BubbleType) {
         let texture = SKTexture(imageNamed: type.imageName)
@@ -101,15 +117,16 @@ class BubbleNode : SKSpriteNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(SKAction.fadeOut(withDuration: 0.01))
         isBurstingAnimating = true
+        scoreGet = type.score
         if let lastType = Utilities.shared.lastPoppedBubbleType {
             if (lastType == self.type) {
-                    Utilities.shared.score += type.score * 1.5
+                    scoreGet = scoreGet * 1.5
+                    Utilities.shared.comboLength += 1
             } else {
-                Utilities.shared.score += type.score
+                Utilities.shared.comboLength = 1
             }
-        } else {
-            Utilities.shared.score += type.score
         }
+        Utilities.shared.score += Int(ceil(scoreGet))
         Utilities.shared.lastPoppedBubbleType = type
         Utilities.shared.currentBubbleNumber -= 1
         busting()
@@ -146,6 +163,9 @@ class BubbleNode : SKSpriteNode {
             self?.removeFromParent()
         })
         
+        let nodeDict:[String: Any] = ["node": self, "frame" : self.frame]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: BUBBLE_POPPED_NOTIF), object: nil, userInfo: nodeDict)
         burstingNode.run(SKAction.sequence([animateAction,SKAction.fadeOut(withDuration: 0.1), doneAction]))
+        
     }
 }

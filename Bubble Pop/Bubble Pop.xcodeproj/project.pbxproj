@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E00A87222282FA89004B9290 /* 17807572.png in Resources */ = {isa = PBXBuildFile; fileRef = E00A87212282FA89004B9290 /* 17807572.png */; };
-		E00A87252283029B004B9290 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A87242283029B004B9290 /* ScoreView.swift */; };
 		E00A87272283073F004B9290 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E00A87262283073F004B9290 /* sprite.atlas */; };
 		E014F6A822849454005F6EDB /* GameModePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F6A722849454005F6EDB /* GameModePageViewController.swift */; };
 		E014F6AA2284953A005F6EDB /* ClassicModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F6A92284953A005F6EDB /* ClassicModeViewController.swift */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		E00A87212282FA89004B9290 /* 17807572.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17807572.png; sourceTree = "<group>"; };
-		E00A87242283029B004B9290 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		E00A87262283073F004B9290 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
 		E014F6A722849454005F6EDB /* GameModePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModePageViewController.swift; sourceTree = "<group>"; };
 		E014F6A92284953A005F6EDB /* ClassicModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicModeViewController.swift; sourceTree = "<group>"; };
@@ -91,14 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E00A87232283027C004B9290 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				E00A87242283029B004B9290 /* ScoreView.swift */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
 		E014F6A62284707F005F6EDB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,7 +118,6 @@
 			children = (
 				E014F6A62284707F005F6EDB /* Scenes */,
 				E06572032281728000651E15 /* Resources */,
-				E00A87232283027C004B9290 /* CustomViews */,
 				E06572182281987800651E15 /* ViewControllers */,
 				E0EC07CC227ABEBF001F63A4 /* Helper */,
 				E0A734CE2268573F008405D2 /* Model */,
@@ -293,7 +282,6 @@
 				E042C10D225F1580009ED61D /* Bubble_Pop.xcdatamodeld in Sources */,
 				E05639A32284B30400467AF3 /* UIView+Extension.swift in Sources */,
 				E06572172281986A00651E15 /* SettingsViewController.swift in Sources */,
-				E00A87252283029B004B9290 /* ScoreView.swift in Sources */,
 				E0A81D132272E6D000FD59A0 /* Utilities.swift in Sources */,
 				E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */,
 				E014F6AC2284954B005F6EDB /* FloatingModeViewController.swift in Sources */,

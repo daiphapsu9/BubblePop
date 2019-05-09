@@ -39,6 +39,8 @@ class GameViewController: UIViewController {
     
     // Setup view
     func setupView() {
+        
+        Utilities.shared.reset()
         labelScore.text = "Score: \(Utilities.shared.score)"
         labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
     }
