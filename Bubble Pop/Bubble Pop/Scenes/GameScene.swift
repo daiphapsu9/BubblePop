@@ -63,15 +63,31 @@ class GameScene: SKScene {
     
     // helper
     
+    func randomizeBubblePosition() -> CGPoint {
+        switch Utilities.shared.gameMode {
+        case .classic?:
+            return CGPoint(x: Int.random(in: Int(getBubbleSize().width/2)..<Int((self.view?.bounds.width)!-getBubbleSize().width/2)), y: Int.random(in: Int(getBubbleSize().height/2)..<Int((self.view?.bounds.height)!-getBubbleSize().height/2)))
+        default:
+            return CGPoint(x: Int.random(in: Int(getBubbleSize().width/2)..<Int((self.view?.bounds.width)!-getBubbleSize().width/2)), y: 0)
+        }
+    }
+    
+    
+    
     func generateBubble() {
-        let numberOfBubble = Int.random(in: 0...Utilities.shared.maxNumberOfBubble)
+        var numberOfBubble = 0
+        switch Utilities.shared.gameMode {
+        case .classic?:
+            numberOfBubble = Int.random(in: 0...Utilities.shared.maxNumberOfBubble)
+        default:
+            numberOfBubble = Int.random(in: 1...5)
+        }
+        
         for _ in 0...numberOfBubble {
             let type = randomType()
             let bubble = BubbleNode(type : type)
-            
-            bubble.size = CGSize(width: Int((self.view?.bounds.width)!/6), height: Int((self.view?.bounds.width)!/6))
-            let position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: Int.random(in: Int(bubble.size.height/2)..<Int((self.view?.bounds.height)!-bubble.size.height/2)))
-            bubble.position = position
+            bubble.size = getBubbleSize()
+            bubble.position = randomizeBubblePosition()
             var shouldAdd = true
             for child in children {
                 if child is BubbleNode {
@@ -83,37 +99,12 @@ class GameScene: SKScene {
             
             if (shouldAdd == true && Utilities.shared.currentBubbleNumber < Utilities.shared.maxNumberOfBubble) {
                 addChild(bubble)
+                bubble.run(SKAction.fadeIn(withDuration: 0.5))
+                if (Utilities.shared.gameMode == .floating) { bubble.float(toY: (self.view?.bounds.height)!) }
                 Utilities.shared.currentBubbleNumber += 1
             }
         }
     }
-    
-    
-    func generateBubbleFloating() {
-        let numberOfBubble = Int.random(in: 1...5)
-        for _ in 0...numberOfBubble {
-            let type = randomType()
-            let bubble = BubbleNode(type : type)
-            let position = CGPoint(x: Int.random(in: Int(bubble.size.width/2)..<Int((self.view?.bounds.width)!-bubble.size.width/2)), y: 0)
-            bubble.size = CGSize(width: Int((self.view?.bounds.width)!/6), height: Int((self.view?.bounds.width)!/6))
-            bubble.position = position
-            var shouldAdd = true
-            for child in children {
-                if child is BubbleNode {
-                    if (child.intersects(bubble) == true) {
-                        shouldAdd = false
-                    }
-                }
-            }
-            
-            if (shouldAdd == true && Utilities.shared.currentBubbleNumber < Utilities.shared.maxNumberOfBubble) {
-                addChild(bubble)
-                bubble.float(toY: (self.view?.bounds.height)!)
-                Utilities.shared.currentBubbleNumber += 1
-            }
-        }
-    }
-    
     
     func randomType() -> BubbleType {
         let randomNumber = Int.random(in: 0 ..< 100)
@@ -128,6 +119,10 @@ class GameScene: SKScene {
         } else {
             return .Red
         }
+    }
+    
+    func getBubbleSize() -> CGSize {
+        return CGSize(width: Int((self.view?.bounds.width)!/6), height: Int((self.view?.bounds.width)!/6))
     }
     
     func updateTime() {

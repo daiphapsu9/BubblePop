@@ -24,7 +24,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsLabel.font = Utilities.shared.getFont(withSize: 60)
         noBubbleSlider.value = Float(Utilities.shared.maxNumberOfBubble)
         durationSlider.value = Float(Utilities.shared.maxDuration)
         noBubbleLabel.text = "\(Int(noBubbleSlider.value))"
@@ -46,7 +45,6 @@ class SettingsViewController: UIViewController {
         noBubbleLabel.text = "\(Int(sender.value))"
     }
     
-    
     @IBAction func gameDurationValueChanged(_ sender: UISlider) {
         durationLabel.text = "\(Int(sender.value))"
     }
@@ -54,6 +52,7 @@ class SettingsViewController: UIViewController {
     @IBAction func confirmButtonTapped(_ sender: Any) {
         Utilities.shared.maxDuration = Int(durationSlider.value)
         Utilities.shared.maxNumberOfBubble = Int(noBubbleSlider.value)
+        navigationController?.popViewController(animated: true)
     }
     
 }

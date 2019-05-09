@@ -51,7 +51,6 @@ class GameOverViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func submitButtonTapped(_ sender: Any) {
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             navigationController.popToRootViewController(animated: true)
-            self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
         }
     }
     

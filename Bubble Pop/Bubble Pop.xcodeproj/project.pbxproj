@@ -10,6 +10,9 @@
 		E00A87222282FA89004B9290 /* 17807572.png in Resources */ = {isa = PBXBuildFile; fileRef = E00A87212282FA89004B9290 /* 17807572.png */; };
 		E00A87252283029B004B9290 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A87242283029B004B9290 /* ScoreView.swift */; };
 		E00A87272283073F004B9290 /* sprite.atlas in Resources */ = {isa = PBXBuildFile; fileRef = E00A87262283073F004B9290 /* sprite.atlas */; };
+		E014F6A822849454005F6EDB /* GameModePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F6A722849454005F6EDB /* GameModePageViewController.swift */; };
+		E014F6AA2284953A005F6EDB /* ClassicModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F6A92284953A005F6EDB /* ClassicModeViewController.swift */; };
+		E014F6AC2284954B005F6EDB /* FloatingModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E014F6AB2284954B005F6EDB /* FloatingModeViewController.swift */; };
 		E042C105225F1580009ED61D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C104225F1580009ED61D /* AppDelegate.swift */; };
 		E042C107225F1580009ED61D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E042C106225F1580009ED61D /* HomeViewController.swift */; };
 		E042C10A225F1580009ED61D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C108225F1580009ED61D /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		E00A87212282FA89004B9290 /* 17807572.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 17807572.png; sourceTree = "<group>"; };
 		E00A87242283029B004B9290 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		E00A87262283073F004B9290 /* sprite.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprite.atlas; sourceTree = "<group>"; };
+		E014F6A722849454005F6EDB /* GameModePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModePageViewController.swift; sourceTree = "<group>"; };
+		E014F6A92284953A005F6EDB /* ClassicModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicModeViewController.swift; sourceTree = "<group>"; };
+		E014F6AB2284954B005F6EDB /* FloatingModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingModeViewController.swift; sourceTree = "<group>"; };
 		E042C101225F1580009ED61D /* Bubble Pop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bubble Pop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E042C104225F1580009ED61D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E042C106225F1580009ED61D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				E0A81D162272FA0D00FD59A0 /* GameOverViewController.swift */,
 				E0A734CC22684C47008405D2 /* RankingTableViewController.swift */,
 				E06572162281986A00651E15 /* SettingsViewController.swift */,
+				E014F6A722849454005F6EDB /* GameModePageViewController.swift */,
+				E014F6A92284953A005F6EDB /* ClassicModeViewController.swift */,
+				E014F6AB2284954B005F6EDB /* FloatingModeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,12 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E014F6AA2284953A005F6EDB /* ClassicModeViewController.swift in Sources */,
 				E0EC07CE227ABF00001F63A4 /* UIViewController+Extension.swift in Sources */,
 				E042C107225F1580009ED61D /* HomeViewController.swift in Sources */,
 				E05CBD7B2270196C00638A98 /* BubbleNode.swift in Sources */,
 				E0A734D02268574E008405D2 /* Player.swift in Sources */,
 				E042C105225F1580009ED61D /* AppDelegate.swift in Sources */,
 				E0A734CD22684C47008405D2 /* RankingTableViewController.swift in Sources */,
+				E014F6A822849454005F6EDB /* GameModePageViewController.swift in Sources */,
 				E05CBD7D22701E5300638A98 /* GameScene.swift in Sources */,
 				E0A81D152272F27700FD59A0 /* NotificatioCenter.swift in Sources */,
 				E0A81D172272FA0D00FD59A0 /* GameOverViewController.swift in Sources */,
@@ -281,6 +292,7 @@
 				E00A87252283029B004B9290 /* ScoreView.swift in Sources */,
 				E0A81D132272E6D000FD59A0 /* Utilities.swift in Sources */,
 				E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */,
+				E014F6AC2284954B005F6EDB /* FloatingModeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

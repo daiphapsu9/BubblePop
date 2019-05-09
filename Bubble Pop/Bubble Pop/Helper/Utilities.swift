@@ -15,11 +15,18 @@ let DEFAULT_PLAYER_NAME = "Anonymous"
 let DEFAULT_DURATION = 30
 let DEFAULT_MAX_BUBBLE = 15
 
+enum GameMode {
+    case classic
+    case floating
+}
+
 class Utilities {
     
     var score : Double = 0.0
     var currentBubbleNumber : Int = 0
     var currentPlayerName : String = DEFAULT_PLAYER_NAME
+    var gameMode : GameMode? = .classic
+    
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
             UserDefaults.standard.set(maxNumberOfBubble, forKey: MAX_BUBBLE_KEY)
@@ -76,11 +83,5 @@ class Utilities {
             maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
         }
     }
-    
-//    func getAllFonts(){
-//        for font in UIFont.familyNames {
-//            print("font === \(font)")
-//        }
-//    }
     
 }

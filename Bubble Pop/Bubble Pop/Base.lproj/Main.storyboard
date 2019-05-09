@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xSf-Th-P2b">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,7 +20,7 @@
             <objects>
                 <navigationController id="xSf-Th-P2b" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXa-uA-4FG">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -36,18 +36,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aje-UD-6qT">
-                                <rect key="frame" x="0.0" y="20" width="320" height="113.5"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="96"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhe-FY-7AA">
-                                <rect key="frame" x="0.0" y="133.5" width="320" height="227.5"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="192"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bubble                POP" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfZ-eX-ebz">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="227.5"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="70"/>
                                         <color key="textColor" red="0.82661920785903931" green="0.4166616649276621" blue="0.68000235329733749" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -60,10 +60,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-Qj-WJL">
-                                <rect key="frame" x="0.0" y="417.5" width="320" height="170.5"/>
+                                <rect key="frame" x="0.0" y="356" width="320" height="144"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q0a-qt-h8q">
-                                        <rect key="frame" x="15" y="17" width="80" height="80"/>
+                                        <rect key="frame" x="15" y="8" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Q0a-qt-h8q" secondAttribute="height" multiplier="1:1" id="Qx3-oW-j3x"/>
                                         </constraints>
@@ -73,14 +73,14 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrM-Z7-9zf">
-                                        <rect key="frame" x="225" y="17" width="80" height="80"/>
+                                        <rect key="frame" x="225" y="8" width="80" height="80"/>
                                         <state key="normal" backgroundImage="settings.png"/>
                                         <connections>
                                             <segue destination="xcU-TT-syf" kind="show" id="zsr-lG-HnT"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-Rm-5OF">
-                                        <rect key="frame" x="95" y="-3" width="130" height="120"/>
+                                        <rect key="frame" x="95" y="-12" width="130" height="120"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF6-Cl-v5X">
                                                 <rect key="frame" x="5" y="0.0" width="120" height="120"/>
@@ -90,7 +90,7 @@
                                                 </constraints>
                                                 <state key="normal" backgroundImage="playbutton.png"/>
                                                 <connections>
-                                                    <segue destination="WrR-1Q-vM7" kind="show" identifier="ToGameVC" id="DTN-9f-wd7"/>
+                                                    <segue destination="xlc-Sg-Jhi" kind="show" identifier="ToModeVC" id="sLO-XB-qH7"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -116,7 +116,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lQ-qx-Zhf">
-                                <rect key="frame" x="0.0" y="361" width="320" height="56.5"/>
+                                <rect key="frame" x="0.0" y="308" width="320" height="48"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qr-Cg-TQU">
                                         <rect key="frame" x="15" y="0.0" width="290" height="30"/>
@@ -172,19 +172,19 @@
             <objects>
                 <viewController id="xcU-TT-syf" customClass="SettingsViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j9F-JH-qUB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkS-Oz-nBo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="170.5"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="144"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jss-5y-8Bw">
-                                        <rect key="frame" x="12" y="35" width="296" height="100"/>
+                                        <rect key="frame" x="38" y="22" width="244.5" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Ota-qJ-jBa"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="65"/>
-                                        <color key="textColor" red="0.30670688858500583" green="0.82661920785903931" blue="0.35146950115650405" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="60"/>
+                                        <color key="textColor" red="0.32605604112551712" green="0.47610248266368382" blue="0.82661920785903931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -195,13 +195,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5j-Bx-N5Z">
-                                <rect key="frame" x="0.0" y="190.5" width="320" height="189"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cje-34-F1o">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VO-Bc-fV3">
-                                                <rect key="frame" x="261" y="-9" width="26.5" height="38"/>
+                                                <rect key="frame" x="261" y="-8.5" width="26.5" height="38"/>
                                                 <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="30"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -247,7 +247,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrI-zz-dfP">
-                                        <rect key="frame" x="0.0" y="94.5" width="320" height="94.5"/>
+                                        <rect key="frame" x="0.0" y="80" width="320" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Duration: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-ud-8PD">
                                                 <rect key="frame" x="20" y="0.0" width="124" height="20.5"/>
@@ -311,12 +311,12 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YQt-5Q-PDK">
-                                <rect key="frame" x="0.0" y="379.5" width="320" height="189.5"/>
+                                <rect key="frame" x="0.0" y="324" width="320" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5U-4p-iXa">
-                                        <rect key="frame" x="0.0" y="63.5" width="320" height="63"/>
+                                        <rect key="frame" x="0.0" y="53.5" width="320" height="53"/>
                                         <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="35"/>
-                                        <state key="normal" title="Confirm">
+                                        <state key="normal" title="Save Changes">
                                             <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -363,14 +363,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K3k-vQ-Q1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1120.2898550724638" y="-225.66964285714283"/>
+            <point key="canvasLocation" x="529" y="573"/>
         </scene>
         <!--High Score-->
         <scene sceneID="p98-pR-xTb">
             <objects>
                 <tableViewController title="High Score" id="3xc-e9-lJh" customClass="RankingTableViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cUG-H8-PZd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -408,33 +408,243 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgr-hV-psc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="545"/>
+            <point key="canvasLocation" x="-360" y="573"/>
+        </scene>
+        <!--Game Mode Page View Controller-->
+        <scene sceneID="cht-vx-xCx">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xlc-Sg-Jhi" customClass="GameModePageViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S8b-WU-Amg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="-745"/>
+        </scene>
+        <!--Classic Mode View Controller-->
+        <scene sceneID="76i-eI-qI1">
+            <objects>
+                <viewController storyboardIdentifier="ClassicModeViewController" id="csA-ol-Axv" customClass="ClassicModeViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aU9-cU-9p0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkf-HJ-5jr">
+                                <rect key="frame" x="0.0" y="20" width="320" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLASSIC MODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-fD-bM7">
+                                        <rect key="frame" x="0.0" y="54.5" width="320" height="51"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="40"/>
+                                        <color key="textColor" red="0.32605604110000003" green="0.4761024827" blue="0.82661920789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ezi-fD-bM7" firstAttribute="centerX" secondItem="Hkf-HJ-5jr" secondAttribute="centerX" id="HgZ-Ua-7o2"/>
+                                    <constraint firstItem="ezi-fD-bM7" firstAttribute="width" secondItem="Hkf-HJ-5jr" secondAttribute="width" id="Vq5-so-oh8"/>
+                                    <constraint firstItem="ezi-fD-bM7" firstAttribute="centerY" secondItem="Hkf-HJ-5jr" secondAttribute="centerY" id="YdS-s8-8ZR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoJ-Be-ab0">
+                                <rect key="frame" x="0.0" y="180" width="320" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this mode bubbles will be generated randomly on the screen and be replaced after 1 second" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZo-Lo-vqy">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="64.5"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eZo-Lo-vqy" firstAttribute="leading" secondItem="MoJ-Be-ab0" secondAttribute="leading" constant="10" id="0sJ-9n-6Ch"/>
+                                    <constraint firstItem="eZo-Lo-vqy" firstAttribute="top" secondItem="MoJ-Be-ab0" secondAttribute="top" id="d6N-LL-rL7"/>
+                                    <constraint firstAttribute="trailing" secondItem="eZo-Lo-vqy" secondAttribute="trailing" constant="10" id="r5h-Ma-CW6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-20-k5c">
+                                <rect key="frame" x="0.0" y="276" width="320" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqv-Ms-Alf">
+                                        <rect key="frame" x="0.0" y="23" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="17"/>
+                                        <state key="normal" title="Let's pop some bubble!"/>
+                                        <connections>
+                                            <segue destination="WrR-1Q-vM7" kind="show" identifier="ToGameViewController" id="vRn-pp-jSm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="wqv-Ms-Alf" firstAttribute="centerY" secondItem="gfh-20-k5c" secondAttribute="centerY" id="T6h-kf-ci9"/>
+                                    <constraint firstItem="wqv-Ms-Alf" firstAttribute="width" secondItem="gfh-20-k5c" secondAttribute="width" id="fcg-rq-xud"/>
+                                    <constraint firstItem="wqv-Ms-Alf" firstAttribute="centerX" secondItem="gfh-20-k5c" secondAttribute="centerX" id="uvx-pd-6cT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eq-aW-sO5">
+                                <rect key="frame" x="0.0" y="356" width="320" height="124"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;&lt; Swipe for more &gt;&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8o-lI-ZTR">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="25"/>
+                                        <color key="textColor" red="0.82665270566940308" green="0.57942491769790649" blue="0.15745857357978821" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="n8o-lI-ZTR" firstAttribute="top" secondItem="1eq-aW-sO5" secondAttribute="top" id="7dR-AD-q1l"/>
+                                    <constraint firstItem="n8o-lI-ZTR" firstAttribute="leading" secondItem="1eq-aW-sO5" secondAttribute="leading" id="BZG-4C-Ucb"/>
+                                    <constraint firstAttribute="bottom" secondItem="n8o-lI-ZTR" secondAttribute="bottom" id="GiW-VW-fE8"/>
+                                    <constraint firstAttribute="trailing" secondItem="n8o-lI-ZTR" secondAttribute="trailing" id="hAz-qj-ciD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mVY-1m-FjU" firstAttribute="trailing" secondItem="MoJ-Be-ab0" secondAttribute="trailing" id="06R-kU-wD8"/>
+                            <constraint firstItem="Hkf-HJ-5jr" firstAttribute="leading" secondItem="mVY-1m-FjU" secondAttribute="leading" id="3fl-f7-Oh4"/>
+                            <constraint firstItem="MoJ-Be-ab0" firstAttribute="height" secondItem="aU9-cU-9p0" secondAttribute="height" multiplier="1:5" id="8hz-pa-ms4"/>
+                            <constraint firstItem="gfh-20-k5c" firstAttribute="trailing" secondItem="mVY-1m-FjU" secondAttribute="trailing" id="HME-hP-ajy"/>
+                            <constraint firstItem="mVY-1m-FjU" firstAttribute="trailing" secondItem="Hkf-HJ-5jr" secondAttribute="trailing" id="LQC-Tg-AyS"/>
+                            <constraint firstItem="gfh-20-k5c" firstAttribute="top" secondItem="MoJ-Be-ab0" secondAttribute="bottom" id="M79-Xf-ieo"/>
+                            <constraint firstItem="Hkf-HJ-5jr" firstAttribute="width" secondItem="aU9-cU-9p0" secondAttribute="width" id="OsL-BB-goe"/>
+                            <constraint firstItem="gfh-20-k5c" firstAttribute="leading" secondItem="mVY-1m-FjU" secondAttribute="leading" id="TLF-Mp-aXY"/>
+                            <constraint firstItem="Hkf-HJ-5jr" firstAttribute="height" secondItem="aU9-cU-9p0" secondAttribute="height" multiplier="1:3" id="Va5-H5-o0P"/>
+                            <constraint firstItem="mVY-1m-FjU" firstAttribute="trailing" secondItem="1eq-aW-sO5" secondAttribute="trailing" id="WcK-1h-jkM"/>
+                            <constraint firstItem="MoJ-Be-ab0" firstAttribute="leading" secondItem="mVY-1m-FjU" secondAttribute="leading" id="dRk-cX-Kng"/>
+                            <constraint firstItem="gfh-20-k5c" firstAttribute="height" secondItem="aU9-cU-9p0" secondAttribute="height" multiplier="1.5:9" id="h5b-h0-izy"/>
+                            <constraint firstItem="MoJ-Be-ab0" firstAttribute="top" secondItem="Hkf-HJ-5jr" secondAttribute="bottom" id="ljM-tZ-qHj"/>
+                            <constraint firstItem="mVY-1m-FjU" firstAttribute="bottom" secondItem="1eq-aW-sO5" secondAttribute="bottom" id="pas-KE-rsA"/>
+                            <constraint firstItem="Hkf-HJ-5jr" firstAttribute="top" secondItem="mVY-1m-FjU" secondAttribute="top" id="qO8-to-U2a"/>
+                            <constraint firstItem="1eq-aW-sO5" firstAttribute="top" secondItem="gfh-20-k5c" secondAttribute="bottom" id="rFb-DO-k4v"/>
+                            <constraint firstItem="1eq-aW-sO5" firstAttribute="leading" secondItem="mVY-1m-FjU" secondAttribute="leading" id="zO1-jm-4Ly"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mVY-1m-FjU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bfq-7R-glR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1593.75" y="-746.83098591549299"/>
+        </scene>
+        <!--Floating Mode View Controller-->
+        <scene sceneID="fgG-13-cdV">
+            <objects>
+                <viewController storyboardIdentifier="FloatingModeViewController" id="JWE-XH-zPD" customClass="FloatingModeViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5F-2q-Pj6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml7-Kr-6cg">
+                                <rect key="frame" x="0.0" y="20" width="320" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FLOATING MODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgz-Df-qLW">
+                                        <rect key="frame" x="0.0" y="54.5" width="320" height="51"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="40"/>
+                                        <color key="textColor" red="0.82661920789999999" green="0.27725849485004517" blue="0.31436890026389741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jgz-Df-qLW" firstAttribute="width" secondItem="Ml7-Kr-6cg" secondAttribute="width" id="6do-Hn-4NK"/>
+                                    <constraint firstItem="Jgz-Df-qLW" firstAttribute="centerY" secondItem="Ml7-Kr-6cg" secondAttribute="centerY" id="BUf-dj-y6M"/>
+                                    <constraint firstItem="Jgz-Df-qLW" firstAttribute="centerX" secondItem="Ml7-Kr-6cg" secondAttribute="centerX" id="NxZ-Ua-WEh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYE-bO-DpT">
+                                <rect key="frame" x="0.0" y="180" width="320" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-XW-kxy">
+                                        <rect key="frame" x="10" y="0.0" width="300" height="86"/>
+                                        <string key="text">In this mode bubbles will float from the bottom of the screen to the top of the screen and Different color bubble will float with different speed</string>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gkv-XW-kxy" secondAttribute="trailing" constant="10" id="5ao-NA-tKB"/>
+                                    <constraint firstItem="Gkv-XW-kxy" firstAttribute="leading" secondItem="uYE-bO-DpT" secondAttribute="leading" constant="10" id="TQc-Pm-v0J"/>
+                                    <constraint firstItem="Gkv-XW-kxy" firstAttribute="top" secondItem="uYE-bO-DpT" secondAttribute="top" id="aaj-cS-X9E"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-2Y-nMA">
+                                <rect key="frame" x="0.0" y="276" width="320" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOR-UV-rs5">
+                                        <rect key="frame" x="0.0" y="23" width="320" height="34"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="17"/>
+                                        <state key="normal" title="Let's pop some bubble!">
+                                            <color key="titleColor" red="0.82661920789999999" green="0.27725849489999999" blue="0.31436890029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="WrR-1Q-vM7" kind="show" identifier="ToGameViewController" id="YIi-4X-jn5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="WOR-UV-rs5" firstAttribute="centerX" secondItem="qh8-2Y-nMA" secondAttribute="centerX" id="1yq-1o-SJi"/>
+                                    <constraint firstItem="WOR-UV-rs5" firstAttribute="width" secondItem="qh8-2Y-nMA" secondAttribute="width" id="Xah-6h-Zey"/>
+                                    <constraint firstItem="WOR-UV-rs5" firstAttribute="centerY" secondItem="qh8-2Y-nMA" secondAttribute="centerY" id="uAR-X0-KZS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;&lt;&lt; Swipe for more &gt;&gt;&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaC-6V-F11">
+                                <rect key="frame" x="0.0" y="356" width="320" height="124"/>
+                                <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="25"/>
+                                <color key="textColor" red="0.82666188478469849" green="0.57931512594223022" blue="0.19652917981147766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qh8-2Y-nMA" firstAttribute="trailing" secondItem="kSP-Ol-cor" secondAttribute="trailing" id="1rr-vx-X37"/>
+                            <constraint firstItem="Ml7-Kr-6cg" firstAttribute="top" secondItem="kSP-Ol-cor" secondAttribute="top" id="239-Bg-PAX"/>
+                            <constraint firstItem="XaC-6V-F11" firstAttribute="bottom" secondItem="kSP-Ol-cor" secondAttribute="bottom" id="6z5-Zr-YDV"/>
+                            <constraint firstItem="XaC-6V-F11" firstAttribute="leading" secondItem="kSP-Ol-cor" secondAttribute="leading" id="DqE-WK-MJh"/>
+                            <constraint firstItem="Ml7-Kr-6cg" firstAttribute="trailing" secondItem="kSP-Ol-cor" secondAttribute="trailing" id="Fcr-v6-G2r"/>
+                            <constraint firstItem="XaC-6V-F11" firstAttribute="trailing" secondItem="kSP-Ol-cor" secondAttribute="trailing" id="IWa-2C-DgO"/>
+                            <constraint firstItem="Ml7-Kr-6cg" firstAttribute="leading" secondItem="kSP-Ol-cor" secondAttribute="leading" id="Ihe-Iz-iUf"/>
+                            <constraint firstItem="XaC-6V-F11" firstAttribute="top" secondItem="qh8-2Y-nMA" secondAttribute="bottom" id="KrU-Ik-tpX"/>
+                            <constraint firstItem="qh8-2Y-nMA" firstAttribute="leading" secondItem="kSP-Ol-cor" secondAttribute="leading" id="Vrr-sv-5RN"/>
+                            <constraint firstItem="uYE-bO-DpT" firstAttribute="height" secondItem="T5F-2q-Pj6" secondAttribute="height" multiplier="1:5" id="aE3-fS-wB3"/>
+                            <constraint firstItem="qh8-2Y-nMA" firstAttribute="top" secondItem="uYE-bO-DpT" secondAttribute="bottom" id="aXQ-7G-KfJ"/>
+                            <constraint firstItem="uYE-bO-DpT" firstAttribute="top" secondItem="Ml7-Kr-6cg" secondAttribute="bottom" id="dqA-F7-GEU"/>
+                            <constraint firstItem="qh8-2Y-nMA" firstAttribute="height" secondItem="T5F-2q-Pj6" secondAttribute="height" multiplier="1.5:9" id="iID-DX-jC8"/>
+                            <constraint firstItem="uYE-bO-DpT" firstAttribute="leading" secondItem="kSP-Ol-cor" secondAttribute="leading" id="mGR-gR-0hr"/>
+                            <constraint firstItem="uYE-bO-DpT" firstAttribute="trailing" secondItem="kSP-Ol-cor" secondAttribute="trailing" id="wv7-H5-2oc"/>
+                            <constraint firstItem="Ml7-Kr-6cg" firstAttribute="height" secondItem="T5F-2q-Pj6" secondAttribute="height" multiplier="1:3" id="zd5-Z8-qYy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kSP-Ol-cor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyu-y2-ax4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336.25" y="-747.88732394366195"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tfe-zQ-gah">
             <objects>
                 <viewController id="WrR-1Q-vM7" customClass="GameViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S49-Xq-eIb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWT-C8-XTb" userLabel="StatusView">
-                                <rect key="frame" x="0.0" y="20" width="320" height="57"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time left: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-eU-afe">
-                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi-score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haJ-7L-M6U">
-                                        <rect key="frame" x="203.5" y="19.5" width="116.5" height="18"/>
+                                        <rect key="frame" x="203.5" y="15" width="116.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-zR-6ea">
-                                        <rect key="frame" x="87.5" y="0.0" width="116" height="57"/>
+                                        <rect key="frame" x="87.5" y="0.0" width="116" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -456,7 +666,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bkc-2K-lDn" customClass="SKView">
-                                <rect key="frame" x="0.0" y="77" width="320" height="491"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -483,28 +693,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVQ-2x-j38" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410.625" y="544.0140845070423"/>
+            <point key="canvasLocation" x="1920" y="93"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="rMJ-U6-6wJ">
             <objects>
                 <viewController storyboardIdentifier="GameOverViewController" id="R6c-7l-eXx" customClass="GameOverViewController" customModule="Bubble_Pop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1T-aO-GPu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXS-RE-kv5">
-                                <rect key="frame" x="0.0" y="20" width="320" height="170.5"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="144"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wr-cM-BIm">
-                                        <rect key="frame" x="0.0" y="85" width="320" height="59"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="49"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="320" height="76"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="60"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGZ-DM-uHU">
-                                        <rect key="frame" x="0.0" y="20" width="320" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <rect key="frame" x="0.0" y="20" width="320" height="39.5"/>
+                                        <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="31"/>
                                         <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -512,7 +722,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="DGZ-DM-uHU" secondAttribute="trailing" id="5lt-6o-sjH"/>
-                                    <constraint firstItem="4wr-cM-BIm" firstAttribute="top" secondItem="DGZ-DM-uHU" secondAttribute="bottom" constant="30" id="Aqo-QM-2uT"/>
+                                    <constraint firstItem="4wr-cM-BIm" firstAttribute="top" secondItem="DGZ-DM-uHU" secondAttribute="bottom" constant="5" id="Aqo-QM-2uT"/>
                                     <constraint firstAttribute="trailing" secondItem="4wr-cM-BIm" secondAttribute="trailing" id="JLX-ZU-DzX"/>
                                     <constraint firstItem="DGZ-DM-uHU" firstAttribute="top" secondItem="bXS-RE-kv5" secondAttribute="top" constant="20" id="QkC-Hl-3yu"/>
                                     <constraint firstItem="4wr-cM-BIm" firstAttribute="width" secondItem="bXS-RE-kv5" secondAttribute="width" id="Rpt-DP-PMc"/>
@@ -522,7 +732,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-pb-vuV">
-                                <rect key="frame" x="0.0" y="247" width="320" height="264"/>
+                                <rect key="frame" x="0.0" y="212" width="320" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCellIdentifier" textLabel="bfE-Hq-3Sg" detailTextLabel="Fw2-IA-oDP" style="IBUITableViewCellStyleValue1" id="m3J-SM-Awh">
@@ -556,12 +766,12 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEB-5k-tii">
-                                <rect key="frame" x="0.0" y="511" width="320" height="57"/>
+                                <rect key="frame" x="0.0" y="432" width="320" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDg-Sm-YUW">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
                                         <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="30"/>
-                                        <state key="normal" title="Submit">
+                                        <state key="normal" title="Menu">
                                             <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -578,16 +788,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfe-gq-xiW">
-                                <rect key="frame" x="0.0" y="190.5" width="320" height="56.5"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scoreboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2Y-4i-gS6">
-                                        <rect key="frame" x="116" y="0.0" width="204" height="56.5"/>
+                                        <rect key="frame" x="116" y="0.0" width="204" height="48"/>
                                         <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="30"/>
                                         <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown.png" translatesAutoresizingMaskIntoConstraints="NO" id="roH-Hg-rmZ">
-                                        <rect key="frame" x="20" y="0.0" width="96" height="56.5"/>
+                                        <rect key="frame" x="20" y="0.0" width="96" height="48"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -642,4 +852,7 @@
         <image name="playbutton.png" width="113" height="113"/>
         <image name="settings.png" width="1049" height="1049"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YIi-4X-jn5"/>
+    </inferredMetricsTieBreakers>
 </document>

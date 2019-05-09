@@ -26,13 +26,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Bubble POP"
-        titleLabel.font = Utilities.shared.getFont(withSize: 70)
-//        titleSecondLabel.font = GameEngine.shared.getFont(withSize: 70)
-        
-        // Do any additional setup after loading the view, typically from a nib.
-//        GameEngine.shared.getAllFonts()
-        
         let image = UIImage(named: "background1")
         let imageView = UIImageView(image: image!)
         imageView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -46,14 +39,13 @@ class HomeViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "ToGameVC") {
+        if (segue.identifier == "ToModeVC") {
             // pass data to next view
             if let name = playerNameTextField.text {
                 Utilities.shared.currentPlayerName = (!name.isEmpty) ? name : DEFAULT_PLAYER_NAME
             } else {
                 Utilities.shared.currentPlayerName = DEFAULT_PLAYER_NAME
             }
-            
         }
     }
 }
