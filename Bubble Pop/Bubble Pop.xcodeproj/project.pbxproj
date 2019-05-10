@@ -130,9 +130,9 @@
 		E06572032281728000651E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E00A87262283073F004B9290 /* sprite.atlas */,
 				E0BCDE7822855AD000BCF161 /* floating_bg.png */,
 				E0BCDE6E228556F500BCF161 /* extra1.png */,
-				E00A87262283073F004B9290 /* sprite.atlas */,
 				E054D22B22840E3B001FCECC /* crown.png */,
 				E00A87212282FA89004B9290 /* 17807572.png */,
 				E06572142281932100651E15 /* settings.png */,

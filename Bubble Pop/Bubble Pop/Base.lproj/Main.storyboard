@@ -644,7 +644,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="89.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time left: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-eU-afe">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="89.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="89.5"/>
                                         <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -656,7 +656,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmm-zR-6ea">
-                                        <rect key="frame" x="113" y="0.0" width="150.5" height="89.5"/>
+                                        <rect key="frame" x="131.5" y="0.0" width="132" height="89.5"/>
                                         <fontDescription key="fontDescription" name="DoubleBubbleShadow" family="Double•Bubble Shadow" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -667,8 +667,8 @@
                                     <constraint firstItem="gmm-zR-6ea" firstAttribute="centerY" secondItem="eZU-eU-afe" secondAttribute="centerY" id="6gZ-cl-A65"/>
                                     <constraint firstItem="haJ-7L-M6U" firstAttribute="height" secondItem="ZWT-C8-XTb" secondAttribute="height" id="FaJ-mx-jQp"/>
                                     <constraint firstItem="eZU-eU-afe" firstAttribute="height" secondItem="ZWT-C8-XTb" secondAttribute="height" id="Gug-Ig-W7n"/>
-                                    <constraint firstItem="eZU-eU-afe" firstAttribute="width" secondItem="ZWT-C8-XTb" secondAttribute="width" multiplier="3:11" id="HGI-jP-IrK"/>
-                                    <constraint firstItem="gmm-zR-6ea" firstAttribute="width" secondItem="ZWT-C8-XTb" secondAttribute="width" multiplier="4:11" id="Lqo-g9-22a"/>
+                                    <constraint firstItem="eZU-eU-afe" firstAttribute="width" secondItem="ZWT-C8-XTb" secondAttribute="width" multiplier="3.5:11" id="HGI-jP-IrK"/>
+                                    <constraint firstItem="gmm-zR-6ea" firstAttribute="width" secondItem="ZWT-C8-XTb" secondAttribute="width" multiplier="3.5:11" id="Lqo-g9-22a"/>
                                     <constraint firstItem="haJ-7L-M6U" firstAttribute="leading" secondItem="gmm-zR-6ea" secondAttribute="trailing" id="dc5-1W-RS8"/>
                                     <constraint firstItem="gmm-zR-6ea" firstAttribute="leading" secondItem="eZU-eU-afe" secondAttribute="trailing" id="iCq-ow-LbH"/>
                                     <constraint firstItem="haJ-7L-M6U" firstAttribute="centerY" secondItem="gmm-zR-6ea" secondAttribute="centerY" id="iIe-zK-3yf"/>

@@ -162,7 +162,6 @@ class GameScene: SKScene {
         let createSpriteAction = SKAction.run { [weak self] in
             if let dict = notification.userInfo as NSDictionary? {
                 if let node = dict["node"] as? BubbleNode {
-                    // do something with your image
                     scoreSprite.position.x = node.frame.minX
                     scoreSprite.position.y = node.frame.minY
                     var combo = ""
