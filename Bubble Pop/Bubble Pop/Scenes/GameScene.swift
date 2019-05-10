@@ -14,6 +14,11 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         setupView()
         setupAction()
+        setupNotification()
+    }
+    
+    //setup notification observer
+    func setupNotification() {
         // add observer to notify when game is over
         NotificationCenter.default.addObserver(
             self,
@@ -34,6 +39,8 @@ class GameScene: SKScene {
         removeAllChildren()
     }
     
+    // MARK: game action
+    // create action for generating, update and clear screen. These action depends on game mode
     func setupAction() {
         let generateAction = SKAction.run({ [weak self] in
             self!.generateBubble()
@@ -49,31 +56,11 @@ class GameScene: SKScene {
             self.run(SKAction.repeatForever(SKAction.sequence([generateAction, SKAction.wait(forDuration: 1)])))
         }
         
-        
-        
         let updateTimeAction = SKAction.run({ [weak self] in
             self!.updateTime()
         })
         self.run(SKAction.repeatForever(SKAction.sequence([updateTimeAction, SKAction.wait(forDuration: 1)])))
     }
-    
-    func clearCurrentScreen() {
-        var count = 0;
-        if(self.children.count == 0) { return }
-        let numberOfBubbleClear = Int.random(in: 0..<self.children.count)
-        for child in children {
-            if(count >= numberOfBubbleClear) { return }
-            if child is BubbleNode {
-                let bubbleNode = child as! BubbleNode
-                if (bubbleNode.isBurstingAnimating) { return }
-                child.removeFromParent()
-                count += 1
-                Utilities.shared.currentBubbleNumber -= 1
-            }
-        }
-    }
-    
-    // helper
     
     func randomizeBubblePosition() -> CGPoint {
         switch Utilities.shared.gameMode {
@@ -83,8 +70,6 @@ class GameScene: SKScene {
             return CGPoint(x: Int.random(in: Int(getBubbleSize().width/2)..<Int((self.view?.bounds.width)!-getBubbleSize().width/2)), y: 0)
         }
     }
-    
-    
     
     func generateBubble() {
         var numberOfBubble = 0
@@ -118,6 +103,24 @@ class GameScene: SKScene {
         }
     }
     
+    // every second, a random number of bubble will be removed from the screen
+    func clearCurrentScreen() {
+        var count = 0;
+        if(self.children.count == 0) { return }
+        let numberOfBubbleClear = Int.random(in: 0..<self.children.count)
+        for child in children {
+            if(count >= numberOfBubbleClear) { return }
+            if child is BubbleNode {
+                let bubbleNode = child as! BubbleNode
+                if (bubbleNode.isBurstingAnimating) { return }
+                child.removeFromParent()
+                count += 1
+                Utilities.shared.currentBubbleNumber -= 1
+            }
+        }
+    }
+    
+    // MARK: Helpers
     func randomType() -> BubbleType {
         let randomNumber = Int.random(in: 0 ..< 100)
         if (randomNumber < 5) {
@@ -133,28 +136,32 @@ class GameScene: SKScene {
         }
     }
     
+    // Get bubble size base on the screen size, it will make bubble size is propotional with
+    // the screen size thus be consistent with all devices
     func getBubbleSize() -> CGSize {
+        // if device is in landscape mode, use screen height
         let preferSize = min(Float((self.view?.bounds.width)!), Float((self.view?.bounds.height)!))
         return CGSize(width: Int(preferSize/6), height: Int(preferSize/6))
     }
     
+    // update duration countdown every second, post notification when countdown reaches 0
     func updateTime() {
         Utilities.shared.duration -= 1
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: TIME_UPDATE_NOTIF), object: nil)
-        
     }
+    
     // MARK: Notification Handler
     @objc func handleGameOver() {
         self.removeAllActions()
         self.removeAllChildren()
     }
     
+    // add score sprite when a bubble is popped
     @objc func animateScore(_ notification: NSNotification) {
         let scoreSprite = SKLabelNode(fontNamed: "Double•Bubble Shadow")
-        
         let createSpriteAction = SKAction.run { [weak self] in
             if let dict = notification.userInfo as NSDictionary? {
-                if let node = dict["node"] as? BubbleNode{
+                if let node = dict["node"] as? BubbleNode {
                     // do something with your image
                     scoreSprite.position.x = node.frame.minX
                     scoreSprite.position.y = node.frame.minY
@@ -176,10 +183,7 @@ class GameScene: SKScene {
         let doneAction = SKAction.run({
             scoreSprite.removeFromParent()
         })
-        
         let scoreFadeOut = SKAction.run({ scoreSprite.run(SKAction.fadeOut(withDuration: 1))})
-        
-        
         self.run(SKAction.sequence([createSpriteAction,scoreFadeOut,SKAction.wait(forDuration: 1), doneAction]))
     }
 }

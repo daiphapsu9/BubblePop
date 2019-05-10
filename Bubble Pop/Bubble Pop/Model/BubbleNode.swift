@@ -102,7 +102,6 @@ class BubbleNode : SKSpriteNode {
     
     func float(toY y: CGFloat) {
         let duration = Double(Float(y)/Float(type.speed))
-//        let duration = Double(Float(y)/Float(50))
         let moveAction = (SKAction.move(to: CGPoint(x: self.position.x, y: y), duration: duration))
         let doneAction = SKAction.run({ [weak self] in
             self!.removeFromParent()
@@ -162,7 +161,6 @@ class BubbleNode : SKSpriteNode {
             burstingNode.removeFromParent()
             self?.removeFromParent()
         })
-        
         let nodeDict:[String: Any] = ["node": self, "frame" : self.frame]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: BUBBLE_POPPED_NOTIF), object: nil, userInfo: nodeDict)
         burstingNode.run(SKAction.sequence([animateAction,SKAction.fadeOut(withDuration: 0.1), doneAction]))

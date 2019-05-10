@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Notification raw name
 let SCORE_UPDATE_NOTIF = "SCORE_UPDATE_NOTIF"
 let TIME_UPDATE_NOTIF = "TIME_UPDATE_NOTIF"
 let GAME_OVER_NOTIF = "GAME_OVER_NOTIF"

@@ -22,6 +22,9 @@ enum GameMode {
     case floating
 }
 
+// MARK: Utiities
+// This class is a singleton for storing in game variables and some default values
+// It also includes utility methods for general supports
 class Utilities {
     
     var score : Int = 0
@@ -29,7 +32,6 @@ class Utilities {
     var currentPlayerName : String = DEFAULT_PLAYER_NAME
     var gameMode : GameMode? = .classic
     var comboLength : Int = 1
-    
     
     var maxNumberOfBubble : Int = DEFAULT_MAX_BUBBLE {
         didSet {
@@ -50,8 +52,8 @@ class Utilities {
             }
         }
     }
-    var lastPoppedBubbleType : BubbleType?
     
+    var lastPoppedBubbleType : BubbleType?
     static let shared = Utilities()
     
     private init() {
@@ -59,7 +61,6 @@ class Utilities {
         maxNumberOfBubble = UserDefaults.standard.integer(forKey: MAX_BUBBLE_KEY)
         lastPoppedBubbleType = nil
         setDefaultValue()
-        
     }
     
     func reset() {
@@ -76,7 +77,7 @@ class Utilities {
         return myFont!
     }
     
-    func setDefaultValue(){
+    func setDefaultValue() {
         if (UserDefaults.standard.integer(forKey: MAX_DURATION_KEY) <= 0) {
             duration = DEFAULT_DURATION
         } else {
@@ -90,7 +91,7 @@ class Utilities {
         }
     }
     
-    func retrievePlayers() -> [Player]{
+    func retrievePlayers() -> [Player] {
         // load all player
         var players : [Player] = []
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -100,7 +101,7 @@ class Utilities {
         return players
     }
     
-    func getHighestScore() -> Int{
+    func getHighestScore() -> Int {
         // load all player
         let players = retrievePlayers()
         if(players.count >= 1) { return players[0].score }

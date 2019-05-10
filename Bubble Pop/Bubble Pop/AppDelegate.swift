@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Can't fetch entity")
         }
-        
     }
 
     // Setter

@@ -19,17 +19,12 @@
 		E042C10F225F1581009ED61D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E042C10E225F1581009ED61D /* Assets.xcassets */; };
 		E042C112225F1581009ED61D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E042C110225F1581009ED61D /* LaunchScreen.storyboard */; };
 		E054D22C22840E3B001FCECC /* crown.png in Resources */ = {isa = PBXBuildFile; fileRef = E054D22B22840E3B001FCECC /* crown.png */; };
-		E05639A32284B30400467AF3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05639A22284B30400467AF3 /* UIView+Extension.swift */; };
 		E05CBD7B2270196C00638A98 /* BubbleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD7A2270196C00638A98 /* BubbleNode.swift */; };
 		E05CBD7D22701E5300638A98 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD7C22701E5300638A98 /* GameScene.swift */; };
 		E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05CBD8022701EB000638A98 /* GameViewController.swift */; };
-		E0657205228172CE00651E15 /* Balonku-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E0657204228172CE00651E15 /* Balonku-Regular.otf */; };
 		E06572072281774300651E15 /* Double_Bubble_shadow.otf in Resources */ = {isa = PBXBuildFile; fileRef = E06572062281774300651E15 /* Double_Bubble_shadow.otf */; };
-		E065720922817A5600651E15 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E065720822817A5600651E15 /* background.png */; };
 		E065720B22817B9C00651E15 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = E065720A22817B9C00651E15 /* background1.png */; };
-		E065720D22817DCF00651E15 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = E065720C22817DCF00651E15 /* background2.png */; };
 		E065720F228185FC00651E15 /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E065720E228185FC00651E15 /* playbutton.png */; };
-		E0657211228189D300651E15 /* cup.png in Resources */ = {isa = PBXBuildFile; fileRef = E0657210228189D300651E15 /* cup.png */; };
 		E065721322818C1800651E15 /* cup_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E065721222818C1700651E15 /* cup_icon.png */; };
 		E06572152281932200651E15 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E06572142281932100651E15 /* settings.png */; };
 		E06572172281986A00651E15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06572162281986A00651E15 /* SettingsViewController.swift */; };
@@ -38,6 +33,7 @@
 		E0A81D132272E6D000FD59A0 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A81D122272E6D000FD59A0 /* Utilities.swift */; };
 		E0A81D152272F27700FD59A0 /* NotificatioCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A81D142272F27700FD59A0 /* NotificatioCenter.swift */; };
 		E0A81D172272FA0D00FD59A0 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A81D162272FA0D00FD59A0 /* GameOverViewController.swift */; };
+		E0BCDE672285468100BCF161 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BCDE662285468100BCF161 /* UIView+Extension.swift */; };
 		E0EC07CE227ABF00001F63A4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EC07CD227ABF00001F63A4 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,17 +52,12 @@
 		E042C111225F1581009ED61D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E042C113225F1581009ED61D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E054D22B22840E3B001FCECC /* crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crown.png; sourceTree = "<group>"; };
-		E05639A22284B30400467AF3 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E05CBD7A2270196C00638A98 /* BubbleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleNode.swift; sourceTree = "<group>"; };
 		E05CBD7C22701E5300638A98 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E05CBD8022701EB000638A98 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		E0657204228172CE00651E15 /* Balonku-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Balonku-Regular.otf"; sourceTree = "<group>"; };
 		E06572062281774300651E15 /* Double_Bubble_shadow.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Double_Bubble_shadow.otf; sourceTree = "<group>"; };
-		E065720822817A5600651E15 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		E065720A22817B9C00651E15 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1.png; sourceTree = "<group>"; };
-		E065720C22817DCF00651E15 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		E065720E228185FC00651E15 /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
-		E0657210228189D300651E15 /* cup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup.png; sourceTree = "<group>"; };
 		E065721222818C1700651E15 /* cup_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup_icon.png; sourceTree = "<group>"; };
 		E06572142281932100651E15 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		E06572162281986A00651E15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +66,7 @@
 		E0A81D122272E6D000FD59A0 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		E0A81D142272F27700FD59A0 /* NotificatioCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatioCenter.swift; sourceTree = "<group>"; };
 		E0A81D162272FA0D00FD59A0 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		E0BCDE662285468100BCF161 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E0EC07CD227ABF00001F63A4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +108,8 @@
 		E042C103225F1580009ED61D /* Bubble Pop */ = {
 			isa = PBXGroup;
 			children = (
-				E014F6A62284707F005F6EDB /* Scenes */,
 				E06572032281728000651E15 /* Resources */,
+				E014F6A62284707F005F6EDB /* Scenes */,
 				E06572182281987800651E15 /* ViewControllers */,
 				E0EC07CC227ABEBF001F63A4 /* Helper */,
 				E0A734CE2268573F008405D2 /* Model */,
@@ -134,18 +126,14 @@
 		E06572032281728000651E15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E054D22B22840E3B001FCECC /* crown.png */,
 				E00A87262283073F004B9290 /* sprite.atlas */,
+				E054D22B22840E3B001FCECC /* crown.png */,
 				E00A87212282FA89004B9290 /* 17807572.png */,
 				E06572142281932100651E15 /* settings.png */,
 				E065721222818C1700651E15 /* cup_icon.png */,
-				E0657210228189D300651E15 /* cup.png */,
 				E065720E228185FC00651E15 /* playbutton.png */,
-				E065720C22817DCF00651E15 /* background2.png */,
 				E065720A22817B9C00651E15 /* background1.png */,
-				E065720822817A5600651E15 /* background.png */,
 				E06572062281774300651E15 /* Double_Bubble_shadow.otf */,
-				E0657204228172CE00651E15 /* Balonku-Regular.otf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -180,7 +168,7 @@
 				E0A81D122272E6D000FD59A0 /* Utilities.swift */,
 				E0A81D142272F27700FD59A0 /* NotificatioCenter.swift */,
 				E0EC07CD227ABF00001F63A4 /* UIViewController+Extension.swift */,
-				E05639A22284B30400467AF3 /* UIView+Extension.swift */,
+				E0BCDE662285468100BCF161 /* UIView+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -246,14 +234,10 @@
 				E054D22C22840E3B001FCECC /* crown.png in Resources */,
 				E06572152281932200651E15 /* settings.png in Resources */,
 				E065720F228185FC00651E15 /* playbutton.png in Resources */,
-				E065720922817A5600651E15 /* background.png in Resources */,
 				E042C112225F1581009ED61D /* LaunchScreen.storyboard in Resources */,
-				E0657205228172CE00651E15 /* Balonku-Regular.otf in Resources */,
 				E065721322818C1800651E15 /* cup_icon.png in Resources */,
 				E00A87272283073F004B9290 /* sprite.atlas in Resources */,
-				E0657211228189D300651E15 /* cup.png in Resources */,
 				E042C10F225F1581009ED61D /* Assets.xcassets in Resources */,
-				E065720D22817DCF00651E15 /* background2.png in Resources */,
 				E042C10A225F1580009ED61D /* Main.storyboard in Resources */,
 				E065720B22817B9C00651E15 /* background1.png in Resources */,
 				E00A87222282FA89004B9290 /* 17807572.png in Resources */,
@@ -275,12 +259,12 @@
 				E0A734D02268574E008405D2 /* Player.swift in Sources */,
 				E042C105225F1580009ED61D /* AppDelegate.swift in Sources */,
 				E0A734CD22684C47008405D2 /* RankingTableViewController.swift in Sources */,
+				E0BCDE672285468100BCF161 /* UIView+Extension.swift in Sources */,
 				E014F6A822849454005F6EDB /* GameModePageViewController.swift in Sources */,
 				E05CBD7D22701E5300638A98 /* GameScene.swift in Sources */,
 				E0A81D152272F27700FD59A0 /* NotificatioCenter.swift in Sources */,
 				E0A81D172272FA0D00FD59A0 /* GameOverViewController.swift in Sources */,
 				E042C10D225F1580009ED61D /* Bubble_Pop.xcdatamodeld in Sources */,
-				E05639A32284B30400467AF3 /* UIView+Extension.swift in Sources */,
 				E06572172281986A00651E15 /* SettingsViewController.swift in Sources */,
 				E0A81D132272E6D000FD59A0 /* Utilities.swift in Sources */,
 				E05CBD8122701EB000638A98 /* GameViewController.swift in Sources */,

@@ -19,13 +19,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var countDownBackground: UIView!
     var timer : Timer?
     var countDown = 3
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         setupNotification()
         setupView()
@@ -37,9 +37,8 @@ class GameViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    // Setup view
+    // Setup view with saved data
     func setupView() {
-        
         Utilities.shared.reset()
         labelScore.text = "Score: \(Utilities.shared.score)"
         labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
@@ -47,61 +46,41 @@ class GameViewController: UIViewController {
         labelHiScore.text = "Hi-Score: \(hiScore)"
     }
     
+    // MARK: Flashing countdown
     func animatingCountDown() {
+        // continuously updating count down label until count down time reaches 0
         timer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(updateCountdown), userInfo: nil, repeats: true)
     }
     
     @objc func updateCountdown() {
         doFadeOut()
-        if(countDown == 0) {
+        if (countDown == 0) {
             countDownLabel.text = "GO"
         } else {
             countDownLabel.text = "\(countDown)"
         }
         doFadeIn()
-        if(countDown <= 0){
+        if (countDown <= 0) {
             processToPlay()
         }
     }
     
+    // count down finish, hide count down background and start game scene
     func processToPlay() {
         timer?.invalidate()
         timer = nil
-        
         countDownBackground.fadeOut(duration: 0.4, delay: 1.0)
         timer = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(showGameScene), userInfo: nil, repeats: false)
     }
     
-    @objc func doFadeIn() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseIn], animations: {
-            self.countDownLabel.alpha = 1.0
-        }, completion:{ _ in
-            self.countDown -= 1
-        })
-    }
-    
-    @objc func doFadeOut() {
-        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseOut], animations: {
-            self.countDownLabel.alpha = 0
-        }, completion: nil)
-    }
-    
     @objc func showGameScene() {
-        
         if let view = self.gameView {
             let sceneSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
             let scene = GameScene(size: sceneSize)
             // Set the scale mode to scale to fit the window
             scene.scaleMode = .resizeFill
-            
             // Present the scene
             view.presentScene(scene)
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
         }
     }
     
@@ -138,16 +117,31 @@ class GameViewController: UIViewController {
         labelTimeLeft.text = "Time left: \(Utilities.shared.duration)"
     }
     
+    // when time reaches 0, save player information into database and process to Game Over View
     @objc func handleGameOver() {
         // create player to save
         let playerName = Utilities.shared.currentPlayerName
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.savePlayer(name: playerName, score: Int16(Utilities.shared.score))
-        
         if let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
             let gameOverVC = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "GameOverViewController")
             navigationController.pushViewController(gameOverVC,animated: true)
         }
+    }
+    
+    // MARK: Helpers
+    @objc func doFadeIn() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseIn], animations: {
+            self.countDownLabel.alpha = 1.0
+        }, completion:{ _ in
+            self.countDown -= 1
+        })
+    }
+    
+    @objc func doFadeOut() {
+        UIView.animate(withDuration: 1.0, delay: 0.0, options: [UIView.AnimationOptions.curveEaseOut], animations: {
+            self.countDownLabel.alpha = 0
+        }, completion: nil)
     }
     
     // MARK:
